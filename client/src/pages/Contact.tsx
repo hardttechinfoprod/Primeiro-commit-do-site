@@ -54,7 +54,7 @@ const Contact = () => {
                   <em style={{ color: '#C79C74', fontStyle: 'italic', fontWeight: 400 }}>Atendimento</em>
                 </h2>
                 <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 15, lineHeight: 1.8, color: 'rgba(1, 3, 38, 0.65)', maxWidth: '38ch' }}>
-                  Entreeeeeeeeeee em contato com nossa banca em Brasília para questões de alta complexidade em âmbito nacional.
+                  Entre em contato com nossa banca em Brasília para questões de alta complexidade em âmbito nacional.
                 </p>
               </div>
 
@@ -178,7 +178,7 @@ const Contact = () => {
                       height: 110,
                       flexShrink: 0,
                       animation: 'sealRotate 28s linear infinite',
-                      opacity: 0.85,
+                      opacity: 0.90,
                     }}
                   >
                     <img
@@ -393,8 +393,8 @@ const Contact = () => {
             <div style={{ flex: 1, position: 'relative', minHeight: 420 }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.837!2d-47.9292!3d-15.7920!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a7c2b5b7b1%3A0x!2sBras%C3%ADlia%2C+DF!5e0!3m2!1spt-BR!2sbr"
-                width="100%"
-                height="100%"
+                width="99%"
+                height="99%"
                 style={{
                   border: 0,
                   display: 'block',
