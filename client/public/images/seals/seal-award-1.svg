@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer circle dotted/dashed -->
+  <circle cx="50" cy="50" r="46" stroke="#C9A876" stroke-width="2" stroke-dasharray="3 3"/>
+  <!-- Inner filled circle -->
+  <circle cx="50" cy="50" r="40" fill="#0F3B3F" stroke="#C9A876" stroke-width="2"/>
+  <!-- Star icon or decoration -->
+  <path d="M50 18 L53 25 L60 25 L55 29 L57 36 L50 31 L43 36 L45 29 L40 25 L47 25 Z" fill="#C9A876"/>
+  <!-- Main text inside -->
+  <text x="50" y="52" font-family="'Playfair Display', serif" font-size="10" font-weight="bold" fill="#C9A876" text-anchor="middle">EXCELÊNCIA</text>
+  <text x="50" y="64" font-family="'Lato', sans-serif" font-size="7" font-weight="normal" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">JURÍDICA</text>
+  <!-- Year / Small detail -->
+  <text x="50" y="76" font-family="'Lato', sans-serif" font-size="5" font-weight="bold" fill="#C9A876" text-anchor="middle" letter-spacing="1">DESDE 2010</text>
+</svg>

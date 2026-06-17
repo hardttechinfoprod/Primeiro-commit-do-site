@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <!-- Icon / Symbol: Monogram A in a shield/crest -->
+  <g transform="translate(10, 5)">
+    <!-- Shield base -->
+    <path d="M25 5 L45 15 V35 C45 45 25 50 25 50 C25 50 5 45 5 35 V15 Z" fill="#1A1A1A" stroke="#C9A876" stroke-width="2"/>
+    <!-- Letter A inside -->
+    <text x="25" y="36" font-family="'Playfair Display', 'Georgia', serif" font-size="28" font-weight="bold" fill="#C9A876" text-anchor="middle">A</text>
+  </g>
+  <!-- Text: ADÃES ADVOGADOS -->
+  <text x="70" y="30" font-family="'Playfair Display', 'Georgia', serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="1.5">ADÃES</text>
+  <text x="70" y="46" font-family="'Lato', 'Arial', sans-serif" font-size="10" font-weight="600" fill="#C9A876" letter-spacing="4">ADVOGADOS</text>
+</svg>
