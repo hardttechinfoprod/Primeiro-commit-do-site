@@ -54,7 +54,7 @@ const Contact = () => {
                   <em style={{ color: '#C79C74', fontStyle: 'italic', fontWeight: 400 }}>Atendimento</em>
                 </h2>
                 <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 15, lineHeight: 1.8, color: 'rgba(1, 3, 38, 0.65)', maxWidth: '38ch' }}>
-                  Entre em contato com nossa banca em Brasília para questões de alta complexidade em âmbito nacional.
+                  Entreeeeeeeeeee em contato com nossa banca em Brasília para questões de alta complexidade em âmbito nacional.
                 </p>
               </div>
 
