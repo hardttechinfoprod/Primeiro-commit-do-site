@@ -76,14 +76,14 @@ const Attorneys = () => {
 
       <PageHero
         eyebrow="A Equipe"
-        title={<>Nossos<br /><em style={{ color: '#C9A876', fontStyle: 'italic' }}>Advogados</em></>}
+        title={<>Nossos<br /><em style={{ color: '#C79C74', fontStyle: 'italic' }}>Advogados</em></>}
         subtitle="Profissionais de excelência com visão estratégica"
         bgImage={IMAGES.heroBg}
       />
 
       {/* Grid de Advogados */}
       <section
-        style={{ padding: '120px 0', background: '#F5F3EE' }}
+        style={{ padding: '120px 0', background: '#FAEDCD' }}
         ref={gridGroup as React.RefObject<HTMLElement>}
       >
         <div className="container">
@@ -92,7 +92,7 @@ const Attorneys = () => {
             <div className="gold-line" />
             <h2 className="headline-lg" style={{ color: '#0F3B3F' }}>
               Profissionais em<br />
-              <em style={{ color: '#C9A876', fontStyle: 'italic' }}>Destaque</em>
+              <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Destaque</em>
             </h2>
           </div>
 
@@ -119,13 +119,13 @@ const Attorneys = () => {
                   />
                   <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%)' }} />
                   <div className="absolute bottom-0 left-0 right-0" style={{ padding: '28px 28px' }}>
-                    <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 400, color: '#F5F3EE', marginBottom: 4 }}>
+                    <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 400, color: '#FAEDCD', marginBottom: 4 }}>
                       {person.name}
                     </h3>
-                    <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', color: '#C9A876', marginBottom: 4 }}>
+                    <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 4 }}>
                       {person.role}
                     </p>
-                    <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(245,243,238,0.5)' }}>
+                    <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.5)' }}>
                       {person.areas}
                     </p>
                   </div>

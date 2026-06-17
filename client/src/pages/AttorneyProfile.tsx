@@ -107,7 +107,7 @@ const AttorneyProfile = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold text-[#0F3B3F]">Advogado não encontrado</h1>
-        <Link href="/advogados" className="mt-4 text-[#C9A876] hover:underline">Voltar para Advogados</Link>
+        <Link href="/advogados" className="mt-4 text-[#C79C74] hover:underline">Voltar para Advogados</Link>
       </div>
     );
   }
@@ -118,9 +118,9 @@ const AttorneyProfile = () => {
       <div className="bg-[#0F3B3F] text-white text-xs py-2">
         <div className="container flex justify-between items-center">
           <div className="flex gap-4">
-            <a href="#" className="hover:text-[#C9A876]">Facebook</a>
-            <a href="#" className="hover:text-[#C9A876]">Instagram</a>
-            <a href="#" className="hover:text-[#C9A876]">LinkedIn</a>
+            <a href="#" className="hover:text-[#C79C74]">Facebook</a>
+            <a href="#" className="hover:text-[#C79C74]">Instagram</a>
+            <a href="#" className="hover:text-[#C79C74]">LinkedIn</a>
           </div>
           <div className="hidden md:flex items-center gap-2"><Phone size={12} /><span>Consulta Gratuita: (11) 3000-0000</span></div>
         </div>
@@ -131,13 +131,13 @@ const AttorneyProfile = () => {
         <div className="container flex items-center justify-between py-4">
           <Link href="/"><img src={IMAGES.logo} alt="Adaes" className="h-10 md:h-12" /></Link>
           <nav className="hidden lg:flex items-center gap-0">
-            <Link href="/" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Inicio</Link>
-            <Link href="/sobre" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Sobre</Link>
-            <Link href="/advogados" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-[#C9A876] border-b-2 border-[#C9A876]">Advogados</Link>
-            <Link href="/blog" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Noticias</Link>
-            <Link href="/areas" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Areas de Pratica</Link>
-            <Link href="/contato" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Contato</Link>
-            <button className="ml-4 p-2 text-gray-600 hover:text-[#C9A876]"><Search size={18} /></button>
+            <Link href="/" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Inicio</Link>
+            <Link href="/sobre" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Sobre</Link>
+            <Link href="/advogados" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-[#C79C74] border-b-2 border-[#C79C74]">Advogados</Link>
+            <Link href="/blog" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Noticias</Link>
+            <Link href="/areas" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Areas de Pratica</Link>
+            <Link href="/contato" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Contato</Link>
+            <button className="ml-4 p-2 text-gray-600 hover:text-[#C79C74]"><Search size={18} /></button>
           </nav>
         </div>
       </header>
@@ -145,7 +145,7 @@ const AttorneyProfile = () => {
       {/* BREADCRUMB */}
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="container py-4 flex items-center gap-2 text-sm">
-          <Link href="/advogados" className="text-[#C9A876] hover:underline flex items-center gap-1">
+          <Link href="/advogados" className="text-[#C79C74] hover:underline flex items-center gap-1">
             <ArrowLeft size={14} /> Voltar para Advogados
           </Link>
         </div>
@@ -162,21 +162,21 @@ const AttorneyProfile = () => {
                 <h3 className="text-sm font-bold text-[#0F3B3F] uppercase tracking-wide mb-4">Informacoes de Contato</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <Mail className="text-[#C9A876] flex-shrink-0 mt-1" size={18} />
+                    <Mail className="text-[#C79C74] flex-shrink-0 mt-1" size={18} />
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wide">Email</p>
-                      <a href={`mailto:${attorney.email}`} className="text-[#0F3B3F] font-semibold hover:text-[#C9A876]">{attorney.email}</a>
+                      <a href={`mailto:${attorney.email}`} className="text-[#0F3B3F] font-semibold hover:text-[#C79C74]">{attorney.email}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Phone className="text-[#C9A876] flex-shrink-0 mt-1" size={18} />
+                    <Phone className="text-[#C79C74] flex-shrink-0 mt-1" size={18} />
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wide">Telefone</p>
-                      <a href={`tel:${attorney.phone}`} className="text-[#0F3B3F] font-semibold hover:text-[#C9A876]">{attorney.phone}</a>
+                      <a href={`tel:${attorney.phone}`} className="text-[#0F3B3F] font-semibold hover:text-[#C79C74]">{attorney.phone}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <MapPin className="text-[#C9A876] flex-shrink-0 mt-1" size={18} />
+                    <MapPin className="text-[#C79C74] flex-shrink-0 mt-1" size={18} />
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wide">Localizacao</p>
                       <p className="text-[#0F3B3F] font-semibold">{attorney.location}</p>
@@ -189,16 +189,16 @@ const AttorneyProfile = () => {
             {/* Profile Info */}
             <div className="md:col-span-2">
               <div className="mb-8">
-                <p className="text-[#C9A876] text-sm font-semibold uppercase tracking-widest mb-2">Perfil do Advogado</p>
+                <p className="text-[#C79C74] text-sm font-semibold uppercase tracking-widest mb-2">Perfil do Advogado</p>
                 <h1 className="text-4xl md:text-5xl font-bold text-[#0F3B3F] mb-2">{attorney.name}</h1>
-                <p className="text-xl text-[#C9A876] font-semibold mb-4">{attorney.role}</p>
+                <p className="text-xl text-[#C79C74] font-semibold mb-4">{attorney.role}</p>
                 <p className="text-gray-600 leading-relaxed text-lg">{attorney.bio}</p>
               </div>
 
               {/* Specialties */}
               <div className="mb-8">
                 <h3 className="text-lg font-bold text-[#0F3B3F] uppercase tracking-wide mb-4 flex items-center gap-2">
-                  <Briefcase size={20} className="text-[#C9A876]" />
+                  <Briefcase size={20} className="text-[#C79C74]" />
                   Especialidades
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -215,7 +215,7 @@ const AttorneyProfile = () => {
                 <h3 className="text-lg font-bold text-[#0F3B3F] uppercase tracking-wide mb-4">Idiomas</h3>
                 <div className="flex flex-wrap gap-2">
                   {attorney.languages.map((lang, i) => (
-                    <span key={i} className="px-3 py-1 bg-[#C9A876]/10 text-[#0F3B3F] text-sm font-semibold rounded">
+                    <span key={i} className="px-3 py-1 bg-[#C79C74]/10 text-[#0F3B3F] text-sm font-semibold rounded">
                       {lang}
                     </span>
                   ))}
@@ -230,19 +230,19 @@ const AttorneyProfile = () => {
       <section className="py-12 bg-white">
         <div className="container">
           <h2 className="text-3xl font-bold text-[#0F3B3F] uppercase tracking-wide mb-8 flex items-center gap-2">
-            <Award size={24} className="text-[#C9A876]" />
+            <Award size={24} className="text-[#C79C74]" />
             Experiencia Profissional
           </h2>
           <div className="space-y-6">
             {attorney.experience.map((exp, i) => (
               <div key={i} className="flex gap-4 pb-6 border-b border-gray-200 last:border-b-0">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#C9A876] rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-[#C79C74] rounded-full flex items-center justify-center text-white font-bold">
                     {exp.year.split('-')[0].slice(-2)}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm text-[#C9A876] font-semibold uppercase tracking-wide">{exp.year}</p>
+                  <p className="text-sm text-[#C79C74] font-semibold uppercase tracking-wide">{exp.year}</p>
                   <h4 className="text-lg font-bold text-[#0F3B3F]">{exp.title}</h4>
                   <p className="text-gray-600">{exp.company}</p>
                 </div>
@@ -256,7 +256,7 @@ const AttorneyProfile = () => {
       <section className="py-12 bg-gray-50">
         <div className="container">
           <h2 className="text-3xl font-bold text-[#0F3B3F] uppercase tracking-wide mb-8 flex items-center gap-2">
-            <BookOpen size={24} className="text-[#C9A876]" />
+            <BookOpen size={24} className="text-[#C79C74]" />
             Formacao Academica
           </h2>
           <div className="space-y-6">
@@ -268,7 +268,7 @@ const AttorneyProfile = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm text-[#C9A876] font-semibold uppercase tracking-wide">{edu.year}</p>
+                  <p className="text-sm text-[#C79C74] font-semibold uppercase tracking-wide">{edu.year}</p>
                   <h4 className="text-lg font-bold text-[#0F3B3F]">{edu.title}</h4>
                   <p className="text-gray-600">{edu.institution}</p>
                 </div>
@@ -279,7 +279,7 @@ const AttorneyProfile = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-10 bg-[#C9A876]">
+      <section className="py-10 bg-[#C79C74]">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <h3 className="text-xl md:text-2xl font-bold text-white italic">Deseja agendar uma consulta com {attorney.name}?</h3>
           <Link href="/contato" className="px-8 py-3 bg-white text-[#0F3B3F] font-semibold uppercase text-sm hover:bg-gray-100 transition-colors">
@@ -303,27 +303,27 @@ const AttorneyProfile = () => {
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Explore</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/advogados" className="hover:text-[#C9A876]">Advogados</Link></li>
-                <li><Link href="/sobre" className="hover:text-[#C9A876]">Sobre Nos</Link></li>
-                <li><Link href="/blog" className="hover:text-[#C9A876]">Noticias</Link></li>
-                <li><Link href="/contato" className="hover:text-[#C9A876]">Contato</Link></li>
+                <li><Link href="/advogados" className="hover:text-[#C79C74]">Advogados</Link></li>
+                <li><Link href="/sobre" className="hover:text-[#C79C74]">Sobre Nos</Link></li>
+                <li><Link href="/blog" className="hover:text-[#C79C74]">Noticias</Link></li>
+                <li><Link href="/contato" className="hover:text-[#C79C74]">Contato</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Areas de Pratica</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Empresarial</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Tributario</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Contencioso Civil</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Imobiliario</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Direito Empresarial</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Direito Tributario</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Contencioso Civil</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Direito Imobiliario</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Newsletter</h4>
               <p className="text-sm mb-4">Receba nossas noticias</p>
               <div className="flex">
-                <input type="email" placeholder="Seu e-mail" className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#C9A876]" />
-                <button className="px-4 py-2 bg-[#C9A876] text-white hover:bg-[#b8976a]"><ChevronRight size={18} /></button>
+                <input type="email" placeholder="Seu e-mail" className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#C79C74]" />
+                <button className="px-4 py-2 bg-[#C79C74] text-white hover:bg-[#b8976a]"><ChevronRight size={18} /></button>
               </div>
             </div>
           </div>

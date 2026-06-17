@@ -1,182 +1,286 @@
 import { Link } from 'wouter';
-import { Phone, Mail, ChevronRight, Search } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { SiteHeader, SiteFooter, PageHero } from '../components/Layout';
 
 const IMAGES = {
-  logo: '/images/logo.svg',
-  logoFooter: '/images/logo-footer.svg',
-  hero: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-  news1: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=80',
-  news2: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80',
-  news3: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80',
-  news4: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=500&q=80',
-  news5: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80',
+  hero: '/images/client/5.jpeg',
+  news1: '/images/client/11.jpeg',
+  news2: '/images/client/14.jpeg',
+  news3: '/images/client/15.jpeg',
+  news4: '/images/client/9.jpeg',
+  news5: '/images/client/13.jpeg',
 };
 
 const articles = [
-  { img: IMAGES.news1, date: '3 de Junho, 2026', title: 'Nova Lei de Protecao de Dados entra em vigor com novas exigencias', excerpt: 'As empresas brasileiras precisam se adequar as novas exigencias da legislacao de protecao de dados que entra em vigor neste mes.' },
-  { img: IMAGES.news2, date: '1 de Junho, 2026', title: 'Gestao de riscos tributarios em tempos desafiadores', excerpt: 'Em um cenario economico complexo, a gestao adequada de riscos tributarios se torna essencial para a saude financeira das empresas.' },
-  { img: IMAGES.news3, date: '28 de Maio, 2026', title: 'Principais questoes de direito do consumidor em 2026', excerpt: 'O direito do consumidor continua evoluindo com novas regulamentacoes e jurisprudencias que impactam empresas de todos os setores.' },
-  { img: IMAGES.news4, date: '25 de Maio, 2026', title: 'Arbitragem Internacional como forma de resolucao de disputas', excerpt: 'A arbitragem internacional se consolida como o metodo preferido para resolucao de disputas comerciais transfronteiricas.' },
-  { img: IMAGES.news5, date: '22 de Maio, 2026', title: 'Compliance corporativo: tendencias e desafios para 2026', excerpt: 'As empresas enfrentam novos desafios em compliance, com regulamentacoes mais rigorosas e fiscalizacao intensificada.' },
+  { id: 1, img: IMAGES.news1, date: '3 de Junho, 2026', author: 'Dra. Ana Costa', category: 'Direito Digital', title: 'Nova Lei de Proteção de Dados entra em vigor com novas exigências', excerpt: 'As empresas brasileiras precisam se adequar às novas exigências da legislação de proteção de dados que entra em vigor neste mês.' },
+  { id: 2, img: IMAGES.news2, date: '1 de Junho, 2026', author: 'Dr. Carlos Silva', category: 'Direito Tributário', title: 'Gestão de riscos tributários em tempos desafiadores', excerpt: 'Em um cenário econômico complexo, a gestão adequada de riscos tributários se torna essencial para a saúde financeira das empresas.' },
+  { id: 3, img: IMAGES.news3, date: '28 de Maio, 2026', author: 'Dra. Juliana Santos', category: 'Direito do Consumidor', title: 'Principais questões de direito do consumidor em 2026', excerpt: 'O direito do consumidor continua evoluindo com novas regulamentações e jurisprudências que impactam empresas de todos os setores.' },
+  { id: 4, img: IMAGES.news4, date: '25 de Maio, 2026', author: 'Dr. Fernando Oliveira', category: 'Arbitragem', title: 'Arbitragem Internacional como forma de resolução de disputas', excerpt: 'A arbitragem internacional se consolida como o método preferido para resolução de disputas comerciais transfronteiriças.' },
+  { id: 5, img: IMAGES.news5, date: '22 de Maio, 2026', author: 'Dra. Ana Costa', category: 'Compliance', title: 'Compliance corporativo: tendências e desafios para 2026', excerpt: 'As empresas enfrentam novos desafios em compliance, com regulamentações mais rigorosas e fiscalização intensificada.' },
+];
+
+const categories = [
+  { name: 'Direito Empresarial', count: 12 },
+  { name: 'Direito Tributário', count: 8 },
+  { name: 'Compliance', count: 6 },
+  { name: 'Direito Digital', count: 5 },
+  { name: 'Direito do Consumidor', count: 4 },
 ];
 
 const Blog = () => {
+  const featuredArticle = articles[0];
+  const listArticles = articles.slice(1);
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="bg-[#0F3B3F] text-white text-xs py-2">
-        <div className="container flex justify-between items-center">
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-[#C9A876]">Facebook</a>
-            <a href="#" className="hover:text-[#C9A876]">Instagram</a>
-            <a href="#" className="hover:text-[#C9A876]">LinkedIn</a>
-          </div>
-          <div className="hidden md:flex items-center gap-2"><Phone size={12} /><span>Consulta Gratuita: (11) 3000-0000</span></div>
-        </div>
-      </div>
+    <>
+      <SiteHeader activePage="/blog" />
 
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="container flex items-center justify-between py-4">
-          <Link href="/"><img src={IMAGES.logo} alt="Adaes" className="h-10 md:h-12" /></Link>
-          <nav className="hidden lg:flex items-center gap-0">
-            <Link href="/" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Inicio</Link>
-            <Link href="/sobre" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Sobre</Link>
-            <Link href="/advogados" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Advogados</Link>
-            <Link href="/blog" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-[#C9A876] border-b-2 border-[#C9A876]">Noticias</Link>
-            <Link href="/areas" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Areas de Pratica</Link>
-            <Link href="/contato" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Contato</Link>
-            <button className="ml-4 p-2 text-gray-600 hover:text-[#C9A876]"><Search size={18} /></button>
-          </nav>
-        </div>
-      </header>
+      <PageHero
+        eyebrow="Inteligência Jurídica"
+        title={<>Dossiês &<br /><em style={{ color: '#C79C74', fontStyle: 'italic', fontWeight: 400 }}>Publicações</em></>}
+        subtitle="Análises críticas e posicionamentos institucionais sobre o cenário corporativo."
+        bgImage={IMAGES.hero}
+      />
 
-      <section className="relative h-64 bg-cover bg-center" style={{ backgroundImage: `url(${IMAGES.hero})` }}>
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 container h-full flex items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">Noticias e Publicacoes</h1>
-            <p className="text-gray-200 mt-2">Artigos e analises juridicas</p>
-          </div>
-        </div>
-      </section>
-
-      {/* BLOG POSTS */}
-      <section className="py-16 bg-white">
+      <section style={{ backgroundColor: '#FAEDCD', padding: '100px 0' }}>
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <div className="space-y-10">
-                {articles.map((article, i) => (
-                  <article key={i} className="group">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="overflow-hidden">
-                        <img src={article.img} alt={article.title} className="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                      </div>
-                      <div className="md:col-span-2">
-                        <span className="text-xs text-[#C9A876] font-semibold">{article.date}</span>
-                        <h3 className="text-xl font-bold text-[#0F3B3F] mt-2 group-hover:text-[#C9A876] transition-colors">{article.title}</h3>
-                        <p className="text-gray-500 text-sm mt-3 leading-relaxed">{article.excerpt}</p>
-                        <Link href={`/noticia/${i + 1}`} className="inline-flex items-center gap-1 text-[#C9A876] text-sm font-semibold mt-4 hover:underline">
-                          Leia mais <ChevronRight size={14} />
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            {/* CONTEÚDO PRINCIPAL (8 Colunas no Desktop) */}
+            <div className="lg:col-span-8 flex flex-col gap-16">
+              
+              {/* ARTIGO EM DESTAQUE (Awwwards Editorial Layout) */}
+              <article className="group">
+                <Link href={`/noticia/${featuredArticle.id}`} className="block cursor-none" style={{ textDecoration: 'none' }}>
+                  <div style={{ aspectRatio: '16/9', overflow: 'hidden', border: '1px solid rgba(1,3,38,0.1)', marginBottom: 28 }}>
+                    <img
+                      src={featuredArticle.img}
+                      alt={featuredArticle.title}
+                      className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-103"
+                      style={{ filter: 'grayscale(15%) contrast(1.05)' }}
+                    />
+                  </div>
+                  
+                  <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider mb-4">
+                    <span style={{ color: '#C79C74' }}>{featuredArticle.date}</span>
+                    <span style={{ width: 12, height: 1, backgroundColor: 'rgba(1,3,38,0.15)' }} />
+                    <span style={{ color: '#010326', opacity: 0.6 }}>Por {featuredArticle.author}</span>
+                  </div>
 
-            {/* Sidebar */}
-            <aside>
-              <div className="mb-8">
-                <h4 className="text-lg font-bold text-[#0F3B3F] mb-4 uppercase tracking-wide">Categorias</h4>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm flex justify-between"><span>Direito Empresarial</span><span className="text-gray-400">(12)</span></a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm flex justify-between"><span>Direito Tributario</span><span className="text-gray-400">(8)</span></a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm flex justify-between"><span>Compliance</span><span className="text-gray-400">(6)</span></a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm flex justify-between"><span>Direito Digital</span><span className="text-gray-400">(5)</span></a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm flex justify-between"><span>Direito Trabalhista</span><span className="text-gray-400">(4)</span></a></li>
-                </ul>
-              </div>
+                  <h2 
+                    className="transition-colors duration-300 group-hover:text-[#063943]"
+                    style={{
+                      fontFamily: 'Playfair Display, serif',
+                      fontSize: 'clamp(26px, 3.5vw, 38px)',
+                      fontWeight: 300,
+                      lineHeight: 1.2,
+                      color: '#010326',
+                      letterSpacing: '-0.02em',
+                      marginBottom: 16
+                    }}
+                  >
+                    {featuredArticle.title}
+                  </h2>
+                  
+                  <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 15, lineHeight: 1.8, color: 'rgba(1,3,38,0.7)', maxWidth: '68ch', marginBottom: 24 }}>
+                    {featuredArticle.excerpt}
+                  </p>
 
-              <div className="mb-8">
-                <h4 className="text-lg font-bold text-[#0F3B3F] mb-4 uppercase tracking-wide">Newsletter</h4>
-                <p className="text-gray-500 text-sm mb-4">Receba nossas atualizacoes juridicas diretamente no seu email.</p>
-                <div className="flex flex-col gap-2">
-                  <input type="email" placeholder="Seu e-mail" className="px-4 py-3 border border-gray-300 text-sm focus:outline-none focus:border-[#C9A876]" />
-                  <button className="px-6 py-3 bg-[#C9A876] text-white font-semibold uppercase text-sm hover:bg-[#b8976a] transition-colors">
-                    Inscrever-se
-                  </button>
+                  <span className="inline-flex items-center gap-3" style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', color: '#010326' }}>
+                    <span className="border-b border-[rgba(1,3,38,0.25)] pb-1 transition-all duration-300 group-hover:border-[#C79C74] group-hover:text-[#C79C74]">Acessar dossiê</span>
+                    <ArrowRight size={14} className="transition-transform duration-500 ease-in-out group-hover:translate-x-1.5 group-hover:text-[#C79C74]" />
+                  </span>
+                </Link>
+              </article>
+
+              {/* LISTA DE OUTROS ARTIGOS (Estilo Sumário de Livro de Luxo) */}
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 40 }} className="flex flex-col">
+                <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: 4, textTransform: 'uppercase', color: '#010326', opacity: 0.5, marginBottom: 32 }}>
+                  Outros Posicionamentos
+                </h3>
+                
+                <div className="flex flex-col">
+                  {listArticles.map((article) => (
+                    <article 
+                      key={article.id} 
+                      style={{ 
+                        borderBottom: '1px solid rgba(1,3,38,0.08)',
+                        padding: '36px 0'
+                      }}
+                      className="group"
+                    >
+                      <Link href={`/noticia/${article.id}`} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start cursor-none" style={{ textDecoration: 'none' }}>
+                        
+                        {/* Imagem Pequena com cantos retos */}
+                        <div className="md:col-span-3 h-28 overflow-hidden" style={{ border: '1px solid rgba(1,3,38,0.08)' }}>
+                          <img
+                            src={article.img}
+                            alt={article.title}
+                            className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                            style={{ filter: 'grayscale(20%)' }}
+                          />
+                        </div>
+
+                        {/* Textos */}
+                        <div className="md:col-span-9 flex flex-col justify-center">
+                          <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-wider mb-2">
+                            <span style={{ color: '#C79C74' }}>{article.date}</span>
+                            <span style={{ color: 'rgba(1,3,38,0.4)' }}>•</span>
+                            <span style={{ color: 'rgba(1,3,38,0.5)' }}>{article.category}</span>
+                          </div>
+                          
+                          <h4 
+                            className="transition-colors duration-300 group-hover:text-[#C79C74]"
+                            style={{
+                              fontFamily: 'Playfair Display, serif',
+                              fontSize: 22,
+                              fontWeight: 400,
+                              lineHeight: 1.35,
+                              color: '#010326',
+                              marginBottom: 12
+                            }}
+                          >
+                            {article.title}
+                          </h4>
+                          
+                          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, lineHeight: 1.7, color: 'rgba(1,3,38,0.6)', marginBottom: 0 }}>
+                            {article.excerpt}
+                          </p>
+                        </div>
+                      </Link>
+                    </article>
+                  ))}
                 </div>
               </div>
 
-              <div>
-                <h4 className="text-lg font-bold text-[#0F3B3F] mb-4 uppercase tracking-wide">Publicacoes Recentes</h4>
-                <ul className="space-y-3">
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm">Impactos da reforma tributaria no setor de servicos</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm">Novas regras para contratos digitais</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-[#C9A876] text-sm">Guia pratico de compliance para PMEs</a></li>
+            </div>
+
+            {/* SIDEBAR DE APOIO (4 Colunas no Desktop) */}
+            <aside className="lg:col-span-4 flex flex-col gap-12 lg:pl-8">
+              
+              {/* Box de Inscrição Newsletter */}
+              <div style={{ backgroundColor: '#010326', padding: '40px 32px', border: '1px solid rgba(250,237,205,0.08)' }}>
+                <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: 3, textTransform: 'uppercase', color: '#C79C74', display: 'block', marginBottom: 16 }}>
+                  Boletim
+                </span>
+                <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 24, fontWeight: 300, color: '#FAEDCD', marginBottom: 16, lineHeight: 1.25 }}>
+                  Inscreva-se na <br /><em style={{ fontStyle: 'italic', color: '#C79C74', fontWeight: 400 }}>inteligência.</em>
+                </h4>
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, lineHeight: 1.7, color: 'rgba(250,237,205,0.6)', marginBottom: 28 }}>
+                  Receba nossos comunicados formais diretamente em sua caixa de entrada.
+                </p>
+                <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="email"
+                    placeholder="Seu endereço de e-mail"
+                    style={{
+                      width: '100%',
+                      padding: '14px 18px',
+                      backgroundColor: 'rgba(250,237,205,0.03)',
+                      border: '1px solid rgba(250,237,205,0.15)',
+                      borderRadius: 0,
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: 13,
+                      color: '#FAEDCD',
+                      outline: 'none',
+                    }}
+                    onFocus={(e) => e.currentTarget.style.borderColor = '#C79C74'}
+                    onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(250,237,205,0.15)'}
+                  />
+                  <button
+                    type="submit"
+                    style={{
+                      width: '100%',
+                      padding: '14px 20px',
+                      backgroundColor: '#C79C74',
+                      border: 'none',
+                      borderRadius: 0,
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: 10,
+                      fontWeight: 600,
+                      letterSpacing: 2,
+                      textTransform: 'uppercase',
+                      color: '#010326',
+                      transition: 'background-color 300ms ease',
+                      cursor: 'none'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#DFC29A'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#C79C74'}
+                  >
+                    Inscrever-se
+                  </button>
+                </form>
+              </div>
+
+              {/* Categorias / Temas */}
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 32 }}>
+                <h4 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: 3, textTransform: 'uppercase', color: '#010326', opacity: 0.5, marginBottom: 24 }}>
+                  Temas de Estudo
+                </h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }} className="flex flex-col gap-4">
+                  {categories.map((cat, idx) => (
+                    <li key={idx} style={{ borderBottom: '1px solid rgba(1,3,38,0.05)', paddingBottom: 12 }}>
+                      <Link 
+                        href="/blog" 
+                        className="group flex justify-between items-center cursor-none" 
+                        style={{ textDecoration: 'none', fontFamily: 'Outfit, sans-serif', fontSize: 14, color: '#010326' }}
+                      >
+                        <span className="transition-colors duration-300 group-hover:text-[#C79C74]">{cat.name}</span>
+                        <span style={{ fontSize: 11, opacity: 0.4 }} className="transition-opacity duration-300 group-hover:opacity-100">({cat.count})</span>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
+
+              {/* Contatos / Redes Sociais */}
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 32 }}>
+                <h4 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: 3, textTransform: 'uppercase', color: '#010326', opacity: 0.5, marginBottom: 20 }}>
+                  Acompanhe
+                </h4>
+                <div className="flex gap-4">
+                  {['LinkedIn', 'Instagram', 'Facebook'].map((social) => (
+                    <a
+                      key={social}
+                      href="#"
+                      className="cursor-none"
+                      style={{
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: 11,
+                        fontWeight: 500,
+                        letterSpacing: 1.5,
+                        textTransform: 'uppercase',
+                        color: '#010326',
+                        opacity: 0.6,
+                        textDecoration: 'none',
+                        borderBottom: '1px solid transparent',
+                        transition: 'all 300ms ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#C79C74';
+                        e.currentTarget.style.opacity = '1';
+                        e.currentTarget.style.borderBottomColor = '#C79C74';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#010326';
+                        e.currentTarget.style.opacity = '0.6';
+                        e.currentTarget.style.borderBottomColor = 'transparent';
+                      }}
+                    >
+                      {social}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
             </aside>
+
           </div>
         </div>
       </section>
 
-      <section className="py-10 bg-[#C9A876]">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <h3 className="text-xl md:text-2xl font-bold text-white italic">Procurando assessoria juridica de primeira classe?</h3>
-          <Link href="/contato" className="px-8 py-3 bg-white text-[#0F3B3F] font-semibold uppercase text-sm hover:bg-gray-100 transition-colors">
-            Solicitar Consulta
-          </Link>
-        </div>
-      </section>
-
-      <footer className="bg-[#1a1a1a] text-gray-300 py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Contatos</h4>
-              <div className="space-y-3 text-sm">
-                <p>Av. Paulista, 1000, 15o andar<br />Sao Paulo, SP</p>
-                <p className="flex items-center gap-2"><Phone size={14} /> (11) 3000-0000</p>
-                <p className="flex items-center gap-2"><Mail size={14} /> contato@adaes.com.br</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Explore</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/advogados" className="hover:text-[#C9A876]">Advogados</Link></li>
-                <li><Link href="/sobre" className="hover:text-[#C9A876]">Sobre Nos</Link></li>
-                <li><Link href="/blog" className="hover:text-[#C9A876]">Noticias</Link></li>
-                <li><Link href="/contato" className="hover:text-[#C9A876]">Contato</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Areas de Pratica</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Empresarial</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Tributario</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Contencioso Civil</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Imobiliario</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Newsletter</h4>
-              <p className="text-sm mb-4">Receba nossas noticias</p>
-              <div className="flex">
-                <input type="email" placeholder="Seu e-mail" className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#C9A876]" />
-                <button className="px-4 py-2 bg-[#C9A876] text-white hover:bg-[#b8976a]"><ChevronRight size={18} /></button>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <img src={IMAGES.logoFooter} alt="Adaes" className="h-8" />
-            <p className="text-xs text-gray-500">Copyright &copy; 2026. Adaes Advogados. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <SiteFooter />
+    </>
   );
 };
 

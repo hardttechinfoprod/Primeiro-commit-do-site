@@ -103,14 +103,14 @@ const PracticeAreas = () => {
 
       <PageHero
         eyebrow="Expertise"
-        title={<>Áreas de<br /><em style={{ color: '#C9A876', fontStyle: 'italic' }}>Prática</em></>}
+        title={<>Áreas de<br /><em style={{ color: '#C79C74', fontStyle: 'italic' }}>Prática</em></>}
         subtitle="Soluções jurídicas integradas para negócios complexos"
         bgImage={IMAGES.heroBg}
       />
 
       {/* Grid de áreas */}
       <section
-        style={{ padding: '120px 0', background: '#F5F3EE' }}
+        style={{ padding: '120px 0', background: '#FAEDCD' }}
         ref={gridRef as React.RefObject<HTMLElement>}
       >
         <div className="container">
@@ -119,7 +119,7 @@ const PracticeAreas = () => {
             <div className="gold-line" />
             <h2 className="headline-lg" style={{ color: '#0F3B3F' }}>
               Áreas de<br />
-              <em style={{ color: '#C9A876', fontStyle: 'italic' }}>Atuação</em>
+              <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Atuação</em>
             </h2>
           </div>
 
@@ -168,7 +168,7 @@ const PracticeAreas = () => {
                         fontFamily: 'Playfair Display, serif',
                         fontSize: 52,
                         fontWeight: 300,
-                        color: 'rgba(201,168,118,0.18)',
+                        color: 'rgba(199, 156, 116,0.18)',
                         lineHeight: 1,
                         marginBottom: 8,
                       }}
@@ -180,7 +180,7 @@ const PracticeAreas = () => {
                         fontFamily: 'Playfair Display, serif',
                         fontSize: 22,
                         fontWeight: 400,
-                        color: '#F5F3EE',
+                        color: '#FAEDCD',
                         marginBottom: 10,
                         lineHeight: 1.2,
                       }}
@@ -191,7 +191,7 @@ const PracticeAreas = () => {
                       style={{
                         fontFamily: 'Lato, sans-serif',
                         fontSize: 13,
-                        color: 'rgba(245,243,238,0.55)',
+                        color: 'rgba(250, 237, 205,0.55)',
                         lineHeight: 1.65,
                         maxWidth: '38ch',
                         marginBottom: 16,
@@ -200,8 +200,8 @@ const PracticeAreas = () => {
                       {p.desc}
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <div style={{ width: 20, height: 1, background: '#C9A876' }} />
-                      <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: '#C9A876' }}>
+                      <div style={{ width: 20, height: 1, background: '#C79C74' }} />
+                      <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: '#C79C74' }}>
                         Saiba mais
                       </span>
                     </div>

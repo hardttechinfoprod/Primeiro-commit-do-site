@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, ArrowRight, X, Menu } from 'lucide-react';
 /* ===================================================================
    ADÃES ADVOGADOS — Awwwards Level Redesign
    Conceito: "ESTRUTURA" — Arquitetura jurídica de alto impacto
-   Paleta: Teal #0F3B3F + Gold #C9A876 + Stone #F5F3EE + Ink #0A0A0A
+   Paleta: Teal #0F3B3F + Gold #C79C74 + Stone #FAEDCD + Ink #0A0A0A
    Tipografia: Playfair Display (light 300) + Lato
    Motion: IntersectionObserver + Parallax + Clip-path Reveals
 =================================================================== */
@@ -875,7 +875,7 @@ const Home = () => {
 
         {/* ===== NOVA SEÇÃO PESSOAS / CONSELHO ESTRATÉGICO ===== */}
         <section
-          style={{ background: '#F5F3EE', paddingTop: 'clamp(80px, 10vw, 120px)', paddingBottom: 'clamp(80px, 10vw, 120px)', borderTop: '1px solid rgba(1, 3, 38, 0.08)' }}
+          style={{ background: '#FAEDCD', paddingTop: 'clamp(80px, 10vw, 120px)', paddingBottom: 'clamp(80px, 10vw, 120px)', borderTop: '1px solid rgba(1, 3, 38, 0.08)' }}
         >
           <div className="container">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
@@ -1185,7 +1185,7 @@ const Home = () => {
                       fontFamily: 'Playfair Display, serif',
                       fontSize: 'clamp(28px, 4vw, 52px)',
                       fontWeight: 300,
-                      color: '#F5F3EE',
+                      color: '#FAEDCD',
                       lineHeight: 1.15,
                       maxWidth: '18ch',
                     }}
@@ -1275,7 +1275,7 @@ const Home = () => {
                     fontFamily: 'Lato, sans-serif',
                     fontSize: 14,
                     lineHeight: 1.8,
-                    color: 'rgba(245,243,238,0.4)',
+                    color: 'rgba(250, 237, 205,0.4)',
                     maxWidth: '36ch',
                     marginBottom: 24,
                   }}
@@ -1373,7 +1373,7 @@ const Home = () => {
                       gap: 10,
                       fontFamily: 'Lato, sans-serif',
                       fontSize: 13,
-                      color: 'rgba(245,243,238,0.4)',
+                      color: 'rgba(250, 237, 205,0.4)',
                       background: 'none',
                       border: 'none',
                       textAlign: 'left',
@@ -1382,7 +1382,7 @@ const Home = () => {
                       transition: 'color 300ms ease',
                     }}
                     onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#C79C74')}
-                    onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(245,243,238,0.4)')}
+                    onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(250, 237, 205,0.4)')}
                   >
                     <MapPin size={14} style={{ flexShrink: 0, marginTop: 2, color: '#C79C74' }} />
                     Setor de Autarquias Norte<br />Brasília, DF
@@ -1414,7 +1414,7 @@ const Home = () => {
             {/* Bottom bar */}
             <div
               style={{
-                borderTop: '1px solid rgba(245,243,238,0.08)',
+                borderTop: '1px solid rgba(250, 237, 205,0.08)',
                 paddingTop: 32,
                 display: 'flex',
                 alignItems: 'center',
@@ -1427,7 +1427,7 @@ const Home = () => {
                 style={{
                   fontFamily: 'Lato, sans-serif',
                   fontSize: 12,
-                  color: 'rgba(245,243,238,0.2)',
+                  color: 'rgba(250, 237, 205,0.2)',
                   letterSpacing: '1px',
                 }}
               >
@@ -1437,7 +1437,7 @@ const Home = () => {
                 style={{
                   fontFamily: 'Lato, sans-serif',
                   fontSize: 12,
-                  color: 'rgba(245,243,238,0.15)',
+                  color: 'rgba(250, 237, 205,0.15)',
                   letterSpacing: '1px',
                 }}
               >

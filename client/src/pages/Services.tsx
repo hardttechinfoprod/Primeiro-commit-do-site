@@ -22,9 +22,9 @@ const Services = () => {
       <div className="bg-[#0F3B3F] text-white text-xs py-2">
         <div className="container flex justify-between items-center">
           <div className="flex gap-4">
-            <a href="#" className="hover:text-[#C9A876]">Facebook</a>
-            <a href="#" className="hover:text-[#C9A876]">Instagram</a>
-            <a href="#" className="hover:text-[#C9A876]">LinkedIn</a>
+            <a href="#" className="hover:text-[#C79C74]">Facebook</a>
+            <a href="#" className="hover:text-[#C79C74]">Instagram</a>
+            <a href="#" className="hover:text-[#C79C74]">LinkedIn</a>
           </div>
           <div className="hidden md:flex items-center gap-2"><Phone size={12} /><span>Consulta Gratuita: (11) 3000-0000</span></div>
         </div>
@@ -34,13 +34,13 @@ const Services = () => {
         <div className="container flex items-center justify-between py-4">
           <Link href="/"><img src={IMAGES.logo} alt="Adaes" className="h-10 md:h-12" /></Link>
           <nav className="hidden lg:flex items-center gap-0">
-            <Link href="/" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Inicio</Link>
-            <Link href="/sobre" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Sobre</Link>
-            <Link href="/advogados" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Advogados</Link>
-            <Link href="/blog" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Noticias</Link>
-            <Link href="/areas" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Areas de Pratica</Link>
-            <Link href="/contato" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C9A876] transition-colors">Contato</Link>
-            <button className="ml-4 p-2 text-gray-600 hover:text-[#C9A876]"><Search size={18} /></button>
+            <Link href="/" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Inicio</Link>
+            <Link href="/sobre" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Sobre</Link>
+            <Link href="/advogados" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Advogados</Link>
+            <Link href="/blog" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Noticias</Link>
+            <Link href="/areas" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Areas de Pratica</Link>
+            <Link href="/contato" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Contato</Link>
+            <button className="ml-4 p-2 text-gray-600 hover:text-[#C79C74]"><Search size={18} /></button>
           </nav>
         </div>
       </header>
@@ -60,7 +60,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((item, i) => (
               <div key={i} className="p-8 border border-gray-200 hover:shadow-lg transition-shadow group text-center">
-                <item.icon className="mx-auto text-[#C9A876] mb-4" size={40} />
+                <item.icon className="mx-auto text-[#C79C74] mb-4" size={40} />
                 <h3 className="text-lg font-bold text-[#0F3B3F] mb-3">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -69,7 +69,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-10 bg-[#C9A876]">
+      <section className="py-10 bg-[#C79C74]">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <h3 className="text-xl md:text-2xl font-bold text-white italic">Precisa de nossos servicos?</h3>
           <Link href="/contato" className="px-8 py-3 bg-white text-[#0F3B3F] font-semibold uppercase text-sm hover:bg-gray-100 transition-colors">
@@ -92,27 +92,27 @@ const Services = () => {
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Explore</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/advogados" className="hover:text-[#C9A876]">Advogados</Link></li>
-                <li><Link href="/sobre" className="hover:text-[#C9A876]">Sobre Nos</Link></li>
-                <li><Link href="/blog" className="hover:text-[#C9A876]">Noticias</Link></li>
-                <li><Link href="/contato" className="hover:text-[#C9A876]">Contato</Link></li>
+                <li><Link href="/advogados" className="hover:text-[#C79C74]">Advogados</Link></li>
+                <li><Link href="/sobre" className="hover:text-[#C79C74]">Sobre Nos</Link></li>
+                <li><Link href="/blog" className="hover:text-[#C79C74]">Noticias</Link></li>
+                <li><Link href="/contato" className="hover:text-[#C79C74]">Contato</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Areas de Pratica</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Empresarial</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Tributario</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Contencioso Civil</a></li>
-                <li><a href="#" className="hover:text-[#C9A876]">Direito Imobiliario</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Direito Empresarial</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Direito Tributario</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Contencioso Civil</a></li>
+                <li><a href="#" className="hover:text-[#C79C74]">Direito Imobiliario</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Newsletter</h4>
               <p className="text-sm mb-4">Receba nossas noticias</p>
               <div className="flex">
-                <input type="email" placeholder="Seu e-mail" className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#C9A876]" />
-                <button className="px-4 py-2 bg-[#C9A876] text-white hover:bg-[#b8976a]"><ChevronRight size={18} /></button>
+                <input type="email" placeholder="Seu e-mail" className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#C79C74]" />
+                <button className="px-4 py-2 bg-[#C79C74] text-white hover:bg-[#b8976a]"><ChevronRight size={18} /></button>
               </div>
             </div>
           </div>

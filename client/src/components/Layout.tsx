@@ -79,8 +79,8 @@ export function SiteHeader({
             </Link>
           ))}
         </nav>
-        <div className="mt-auto pt-8" style={{ borderTop: '1px solid rgba(245,243,238,0.1)' }}>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(245,243,238,0.35)' }}>
+        <div className="mt-auto pt-8" style={{ borderTop: '1px solid rgba(250, 237, 205,0.1)' }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(250, 237, 205,0.35)' }}>
             BRASÍLIA, DF · BRASIL
           </p>
         </div>
@@ -93,8 +93,8 @@ export function SiteHeader({
           background: isTransparent
             ? 'transparent'
             : scrolled
-              ? 'rgba(245, 243, 238, 0.96)'
-              : 'rgba(245, 243, 238, 0.98)',
+              ? 'rgba(250, 237, 205, 0.96)'
+              : 'rgba(250, 237, 205, 0.98)',
           backdropFilter: isTransparent ? 'none' : 'blur(20px)',
           borderBottom: isTransparent ? 'none' : '1px solid rgba(213, 209, 200, 0.5)',
         }}
@@ -130,21 +130,21 @@ export function SiteHeader({
                   letterSpacing: '3px',
                   textTransform: 'uppercase',
                   padding: '10px 24px',
-                  border: `1px solid ${isTransparent ? 'rgba(245,243,238,0.5)' : '#0F3B3F'}`,
-                  color: isTransparent ? '#F5F3EE' : '#0F3B3F',
+                  border: `1px solid ${isTransparent ? 'rgba(250, 237, 205,0.5)' : '#0F3B3F'}`,
+                  color: isTransparent ? '#FAEDCD' : '#0F3B3F',
                   textDecoration: 'none',
                   transition: 'all 300ms ease',
                   display: 'inline-block',
                 }}
                 onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.background = '#C9A876';
-                  (e.currentTarget as HTMLElement).style.borderColor = '#C9A876';
-                  (e.currentTarget as HTMLElement).style.color = '#F5F3EE';
+                  (e.currentTarget as HTMLElement).style.background = '#C79C74';
+                  (e.currentTarget as HTMLElement).style.borderColor = '#C79C74';
+                  (e.currentTarget as HTMLElement).style.color = '#FAEDCD';
                 }}
                 onMouseLeave={e => {
                   (e.currentTarget as HTMLElement).style.background = 'transparent';
-                  (e.currentTarget as HTMLElement).style.borderColor = isTransparent ? 'rgba(245,243,238,0.5)' : '#0F3B3F';
-                  (e.currentTarget as HTMLElement).style.color = isTransparent ? '#F5F3EE' : '#0F3B3F';
+                  (e.currentTarget as HTMLElement).style.borderColor = isTransparent ? 'rgba(250, 237, 205,0.5)' : '#0F3B3F';
+                  (e.currentTarget as HTMLElement).style.color = isTransparent ? '#FAEDCD' : '#0F3B3F';
                 }}
               >
                 Contato
@@ -153,7 +153,7 @@ export function SiteHeader({
 
             <button
               className="lg:hidden p-2"
-              style={{ color: isTransparent ? '#F5F3EE' : '#0A0A0A', background: 'none', border: 'none' }}
+              style={{ color: isTransparent ? '#FAEDCD' : '#0A0A0A', background: 'none', border: 'none' }}
               onClick={() => setMobileOpen(true)}
               aria-label="Abrir menu"
             >
@@ -186,7 +186,7 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
               className="h-10 mb-6"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
-            <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, lineHeight: 1.8, color: 'rgba(245,243,238,0.35)', maxWidth: '40ch', marginBottom: 24 }}>
+            <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, lineHeight: 1.8, color: 'rgba(250, 237, 205,0.35)', maxWidth: '40ch', marginBottom: 24 }}>
               Conselheiros estratégicos ao lado de empresários, investidores e executivos de alto patrimônio.
             </p>
             <div style={{ display: 'flex', gap: 20 }}>
@@ -198,7 +198,7 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
 
           {/* Nav */}
           <div>
-            <h4 style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C9A876', marginBottom: 24 }}>
+            <h4 style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 24 }}>
               Escritório
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -210,27 +210,27 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
 
           {/* Contato */}
           <div>
-            <h4 style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C9A876', marginBottom: 24 }}>
+            <h4 style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 24 }}>
               Contato
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {onMapOpen && (
                 <button
                   onClick={onMapOpen}
-                  style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'Lato, sans-serif', fontSize: 13, color: 'rgba(245,243,238,0.35)', background: 'none', border: 'none', textAlign: 'left', lineHeight: 1.6, cursor: 'none', transition: 'color 300ms ease' }}
-                  onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#C9A876')}
-                  onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(245,243,238,0.35)')}
+                  style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'Lato, sans-serif', fontSize: 13, color: 'rgba(250, 237, 205,0.35)', background: 'none', border: 'none', textAlign: 'left', lineHeight: 1.6, cursor: 'none', transition: 'color 300ms ease' }}
+                  onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#C79C74')}
+                  onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(250, 237, 205,0.35)')}
                 >
-                  <MapPin size={13} style={{ flexShrink: 0, marginTop: 3, color: '#C9A876' }} />
+                  <MapPin size={13} style={{ flexShrink: 0, marginTop: 3, color: '#C79C74' }} />
                   Setor de Autarquias Norte<br />Brasília, DF
                 </button>
               )}
               <a href="tel:+556130000000" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <Phone size={13} style={{ color: '#C9A876', flexShrink: 0 }} />
+                <Phone size={13} style={{ color: '#C79C74', flexShrink: 0 }} />
                 (61) 3000-0000
               </a>
               <a href="mailto:contato@adaes.adv.br" className="footer-link" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <Mail size={13} style={{ color: '#C9A876', flexShrink: 0 }} />
+                <Mail size={13} style={{ color: '#C79C74', flexShrink: 0 }} />
                 contato@adaes.adv.br
               </a>
             </div>
@@ -238,11 +238,11 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
         </div>
 
         {/* Bottom */}
-        <div style={{ borderTop: '1px solid rgba(245,243,238,0.07)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(245,243,238,0.18)', letterSpacing: '1px' }}>
+        <div style={{ borderTop: '1px solid rgba(250, 237, 205,0.07)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.18)', letterSpacing: '1px' }}>
             © 2026 Adães Advogados. Todos os direitos reservados.
           </p>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(245,243,238,0.12)', letterSpacing: '1px' }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.12)', letterSpacing: '1px' }}>
             OAB/DF · Brasília, Brasil
           </p>
         </div>
@@ -290,13 +290,13 @@ export function PageHero({
       />
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
         <span className="eyebrow">{eyebrow}</span>
-        <div style={{ width: 32, height: 1, background: '#C9A876', margin: '12px 0 20px' }} />
+        <div style={{ width: 32, height: 1, background: '#C79C74', margin: '12px 0 20px' }} />
         <h1
           style={{
             fontFamily: 'Playfair Display, serif',
             fontSize: 'clamp(36px, 5vw, 64px)',
             fontWeight: 300,
-            color: '#F5F3EE',
+            color: '#FAEDCD',
             lineHeight: 1.05,
             letterSpacing: '-0.02em',
           }}
@@ -304,7 +304,7 @@ export function PageHero({
           {title}
         </h1>
         {subtitle && (
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 15, color: 'rgba(245,243,238,0.55)', marginTop: 12 }}>
+          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 15, color: 'rgba(250, 237, 205,0.55)', marginTop: 12 }}>
             {subtitle}
           </p>
         )}
@@ -332,14 +332,14 @@ export function CtaSection() {
                 fontFamily: 'Playfair Display, serif',
                 fontSize: 'clamp(28px, 3.5vw, 44px)',
                 fontWeight: 300,
-                color: '#F5F3EE',
+                color: '#FAEDCD',
                 lineHeight: 1.2,
                 maxWidth: '20ch',
                 marginTop: 20,
               }}
             >
               Sua empresa merece{' '}
-              <em style={{ color: '#C9A876', fontStyle: 'italic' }}>
+              <em style={{ color: '#C79C74', fontStyle: 'italic' }}>
                 conselheiros estratégicos.
               </em>
             </h2>
@@ -357,13 +357,13 @@ export function CtaSection() {
               textTransform: 'uppercase',
               color: '#0A0A0A',
               textDecoration: 'none',
-              background: '#C9A876',
+              background: '#C79C74',
               padding: '18px 36px',
               flexShrink: 0,
               transition: 'background 300ms ease',
             }}
             onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#DFC29A')}
-            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#C9A876')}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#C79C74')}
           >
             Solicitar Consulta
             <ArrowRight size={15} />

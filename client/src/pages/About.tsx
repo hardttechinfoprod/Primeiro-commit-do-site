@@ -59,14 +59,14 @@ const About = () => {
 
       <PageHero
         eyebrow="O Escritório"
-        title={<>Sobre<br /><em style={{ color: '#C9A876', fontStyle: 'italic' }}>o Adães</em></>}
+        title={<>Sobre<br /><em style={{ color: '#C79C74', fontStyle: 'italic' }}>o Adães</em></>}
         subtitle="Conselheiros estratégicos há mais de 25 anos"
         bgImage={IMAGES.heroBg}
       />
 
       {/* Quem Somos */}
       <section
-        style={{ padding: '120px 0', background: '#F5F3EE' }}
+        style={{ padding: '120px 0', background: '#FAEDCD' }}
         ref={introGroup as React.RefObject<HTMLElement>}
       >
         <div className="container">
@@ -77,7 +77,7 @@ const About = () => {
               <div className="gold-line" />
               <h2 className="headline-md reveal stagger-2" style={{ color: '#0F3B3F', marginBottom: 32 }}>
                 Não somos apenas<br />
-                <em style={{ color: '#C9A876', fontStyle: 'italic' }}>advogados.</em>
+                <em style={{ color: '#C79C74', fontStyle: 'italic' }}>advogados.</em>
               </h2>
               <p className="body-lg reveal stagger-3" style={{ marginBottom: 20 }}>
                 O Adães Advogados nasceu com uma premissa clara: empresários,
@@ -118,9 +118,9 @@ const About = () => {
           <div style={{ marginBottom: 72 }} className="reveal stagger-1">
             <span className="eyebrow">Fundamentos</span>
             <div className="gold-line" />
-            <h2 className="headline-lg" style={{ color: '#F5F3EE', maxWidth: '12ch' }}>
+            <h2 className="headline-lg" style={{ color: '#FAEDCD', maxWidth: '12ch' }}>
               Nossos<br />
-              <em style={{ color: '#C9A876', fontStyle: 'italic' }}>Valores</em>
+              <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Valores</em>
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}
@@ -132,14 +132,14 @@ const About = () => {
                 style={{
                   background: '#111',
                   padding: '48px 40px',
-                  borderTop: '2px solid #C9A876',
+                  borderTop: '2px solid #C79C74',
                 }}
               >
                 <div style={{
                   fontFamily: 'Playfair Display, serif',
                   fontSize: 64,
                   fontWeight: 300,
-                  color: 'rgba(201,168,118,0.15)',
+                  color: 'rgba(199, 156, 116,0.15)',
                   lineHeight: 1,
                   marginBottom: 24,
                 }}>
@@ -149,7 +149,7 @@ const About = () => {
                   fontFamily: 'Playfair Display, serif',
                   fontSize: 28,
                   fontWeight: 400,
-                  color: '#F5F3EE',
+                  color: '#FAEDCD',
                   marginBottom: 16,
                 }}>
                   {v.title}
@@ -158,7 +158,7 @@ const About = () => {
                   fontFamily: 'Lato, sans-serif',
                   fontSize: 15,
                   lineHeight: 1.8,
-                  color: 'rgba(245,243,238,0.45)',
+                  color: 'rgba(250, 237, 205,0.45)',
                 }}>
                   {v.desc}
                 </p>
@@ -188,20 +188,20 @@ const About = () => {
                   fontFamily: 'Playfair Display, serif',
                   fontSize: 'clamp(44px, 4vw, 72px)',
                   fontWeight: 300,
-                  color: '#C9A876',
+                  color: '#C79C74',
                   lineHeight: 1,
                   letterSpacing: '-0.02em',
                 }}>
                   {s.n}
                 </div>
-                <div style={{ width: 32, height: 1, background: 'rgba(201,168,118,0.4)', margin: '16px 0' }} />
+                <div style={{ width: 32, height: 1, background: 'rgba(199, 156, 116,0.4)', margin: '16px 0' }} />
                 <p style={{
                   fontFamily: 'Lato, sans-serif',
                   fontSize: 11,
                   fontWeight: 600,
                   letterSpacing: '3px',
                   textTransform: 'uppercase',
-                  color: 'rgba(245,243,238,0.4)',
+                  color: 'rgba(250, 237, 205,0.4)',
                 }}>
                   {s.l}
                 </p>
