@@ -1,98 +1,94 @@
+import { useState } from 'react';
 import { useRoute } from 'wouter';
 import { Link } from 'wouter';
-import { Phone, Mail, MapPin, ChevronRight, Search, ArrowLeft, Briefcase, Award, BookOpen } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowLeft, Briefcase, Award, BookOpen, X } from 'lucide-react';
+import { SiteHeader, SiteFooter } from '../components/Layout';
 
 const IMAGES = {
-  logo: '/images/logo.svg',
-  logoFooter: '/images/logo-footer.svg',
-  att1: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=500&q=80',
-  att2: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=500&q=80',
-  att3: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=500&q=80',
-  att4: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=500&q=80',
+  att1: '/images/client/4.jpeg',
+  att2: '/images/client/6.jpeg',
+  att3: '/images/client/8.jpeg',
+  att4: '/images/client/3.jpeg',
 };
 
 const attorneyData = {
   1: {
     id: 1,
-    name: 'Dr. Carlos Silva',
+    name: 'Dr. Carlos Adães',
     role: 'Sócio Fundador',
-    location: 'São Paulo',
-    email: 'carlos.silva@adaes.com.br',
-    phone: '(11) 3000-0001',
+    location: 'Brasília, DF',
+    email: 'carlos.adaes@adaes.adv.br',
+    phone: '(61) 3000-0001',
     img: IMAGES.att1,
-    bio: 'Com mais de 25 anos de experiência em direito empresarial e fusões & aquisições, Dr. Carlos Silva é especialista em estruturação de operações complexas e governança corporativa. Formado pela Universidade de São Paulo (USP) e pós-graduado em Direito Empresarial pela FAAP.',
-    specialties: ['Direito Empresarial', 'Fusões e Aquisições', 'Governança Corporativa', 'Direito Societário'],
+    bio: 'Com mais de 25 anos de atuação estratégica em Brasília, Dr. Carlos Adães assessora grandes grupos corporativos, holdings e investidores de alto patrimônio. Especialista em estruturação societária complexa e governança patrimonial. Graduado pela Universidade de Brasília (UnB).',
+    specialties: ['Direito Empresarial', 'Fusões e Aquisições', 'Governança Corporativa', 'Planejamento Sucessório'],
     experience: [
-      { year: '2015-Presente', title: 'Sócio Fundador', company: 'Adaes Advogados' },
-      { year: '2010-2015', title: 'Sócio', company: 'Silva & Associados Advogados' },
-      { year: '2005-2010', title: 'Advogado Senior', company: 'Grandes Escritórios Nacionais' },
+      { year: '2001-Presente', title: 'Sócio Fundador', company: 'Adães Advogados' },
+      { year: '1996-2001', title: 'Sócio Consultor', company: 'Advocacia Empresarial' },
     ],
     education: [
-      { year: '2000', title: 'Bacharelado em Direito', institution: 'Universidade de São Paulo (USP)' },
-      { year: '2002', title: 'Pós-Graduação em Direito Empresarial', institution: 'FAAP' },
+      { year: '1995', title: 'Bacharelado em Direito', institution: 'Universidade de Brasília (UnB)' },
+      { year: '1998', title: 'Mestrado em Direito Societário', institution: 'UnB / IDP' },
     ],
     languages: ['Português', 'Inglês', 'Espanhol'],
   },
   2: {
     id: 2,
-    name: 'Dra. Ana Costa',
+    name: 'Dra. Ana Figueiredo',
     role: 'Sócia',
-    location: 'São Paulo',
-    email: 'ana.costa@adaes.com.br',
-    phone: '(11) 3000-0002',
+    location: 'Brasília, DF',
+    email: 'ana.figueiredo@adaes.adv.br',
+    phone: '(61) 3000-0002',
     img: IMAGES.att2,
-    bio: 'Especialista em direito tributário e compliance, Dra. Ana Costa possui vasta experiência em planejamento tributário e adequação de empresas às normas regulatórias. Formada pela PUC-SP e com especialização em Direito Tributário pela FGV.',
-    specialties: ['Direito Tributário', 'Compliance', 'LGPD', 'Planejamento Tributário'],
+    bio: 'Especialista em direito tributário e compliance regulatório, Dra. Ana Figueiredo possui ampla atuação na mitigação de riscos fiscais e contencioso administrativo de alta complexidade. Graduada em Direito e com especialização em Direito Tributário pela Fundação Getulio Vargas (FGV).',
+    specialties: ['Direito Tributário', 'Compliance Fiscal', 'LGPD', 'Reestruturação Societária'],
     experience: [
-      { year: '2018-Presente', title: 'Sócia', company: 'Adaes Advogados' },
-      { year: '2012-2018', title: 'Advogada Senior', company: 'Grandes Escritórios Nacionais' },
-      { year: '2008-2012', title: 'Advogada Plena', company: 'Consultoria Tributária' },
+      { year: '2010-Presente', title: 'Sócia', company: 'Adães Advogados' },
+      { year: '2005-2010', title: 'Advogada Associada', company: 'Banca Tributária Nacional' },
     ],
     education: [
-      { year: '2003', title: 'Bacharelado em Direito', institution: 'PUC-SP' },
-      { year: '2005', title: 'Especialização em Direito Tributário', institution: 'FGV' },
+      { year: '2004', title: 'Bacharelado em Direito', institution: 'Universidade de Brasília (UnB)' },
+      { year: '2007', title: 'Especialização em Direito Tributário', institution: 'FGV' },
     ],
     languages: ['Português', 'Inglês', 'Francês'],
   },
   3: {
     id: 3,
-    name: 'Dr. Fernando Oliveira',
-    role: 'Advogado Senior',
-    location: 'São Paulo',
-    email: 'fernando.oliveira@adaes.com.br',
-    phone: '(11) 3000-0003',
+    name: 'Dr. Fernando Melo',
+    role: 'Advogado Sênior',
+    location: 'Brasília, DF',
+    email: 'fernando.melo@adaes.adv.br',
+    phone: '(61) 3000-0003',
     img: IMAGES.att3,
-    bio: 'Especialista em contencioso civil e arbitragem, Dr. Fernando Oliveira possui experiência em litigios complexos e resolução de disputas comerciais. Formado pela Universidade Federal do Rio de Janeiro (UFRJ) e com pós-graduação em Arbitragem Internacional.',
-    specialties: ['Contencioso Civil', 'Arbitragem', 'Litigios Comerciais', 'Resolução de Disputas'],
+    bio: 'Focado em contencioso cível estratégico e arbitragem comercial, Dr. Fernando Melo tem larga experiência na condução de litígios complexos nos tribunais superiores e câmaras arbitrais. Graduado em Direito e especialista em Resolução de Conflitos.',
+    specialties: ['Contencioso Civil', 'Arbitragem', 'Litígios Comerciais', 'Resolução de Disputas'],
     experience: [
-      { year: '2016-Presente', title: 'Advogado Senior', company: 'Adaes Advogados' },
-      { year: '2010-2016', title: 'Advogado Pleno', company: 'Escritório de Contencioso' },
-      { year: '2006-2010', title: 'Advogado Júnior', company: 'Tribunal de Justiça' },
+      { year: '2015-Presente', title: 'Advogado Sênior', company: 'Adães Advogados' },
+      { year: '2010-2015', title: 'Advogado Associado', company: 'Banca de Contencioso Superior' },
     ],
     education: [
-      { year: '2001', title: 'Bacharelado em Direito', institution: 'UFRJ' },
-      { year: '2004', title: 'Pós-Graduação em Arbitragem Internacional', institution: 'UERJ' },
+      { year: '2009', title: 'Bacharelado em Direito', institution: 'UFRJ' },
+      { year: '2012', title: 'Pós-Graduação em Arbitragem', institution: 'IDP' },
     ],
     languages: ['Português', 'Inglês'],
   },
   4: {
     id: 4,
-    name: 'Dra. Juliana Santos',
-    role: 'Advogada Senior',
-    location: 'São Paulo',
-    email: 'juliana.santos@adaes.com.br',
-    phone: '(11) 3000-0004',
+    name: 'Dra. Juliana Carvalho',
+    role: 'Advogada Sênior',
+    location: 'Brasília, DF',
+    email: 'juliana.carvalho@adaes.adv.br',
+    phone: '(61) 3000-0004',
     img: IMAGES.att4,
-    bio: 'Especialista em direito trabalhista e compliance, Dra. Juliana Santos possui experiência em negociações coletivas e reestruturações empresariais. Formada pela Universidade Mackenzie e com especialização em Direito do Trabalho pela UNISANTA.',
-    specialties: ['Direito Trabalhista', 'Compliance Trabalhista', 'Negociações Coletivas', 'Reestruturação'],
+    bio: 'Especialista em direito imobiliário, regularização fundiária e agronegócio, Dra. Juliana Carvalho assessora grandes incorporadoras e holdings rurais na estruturação e proteção de ativos. Formada em Direito com especialização em Direito de Propriedade.',
+    specialties: ['Direito Imobiliário', 'Agronegócio', 'Holdings Rurais', 'Regularização Fundiária'],
     experience: [
-      { year: '2017-Presente', title: 'Advogada Senior', company: 'Adaes Advogados' },
-      { year: '2011-2017', title: 'Advogada Plena', company: 'Departamento Trabalhista' },
-      { year: '2007-2011', title: 'Advogada Júnior', company: 'Sindicatos e Confederações' },
+      { year: '2017-Presente', title: 'Advogada Sênior', company: 'Adães Advogados' },
+      { year: '2012-2017', title: 'Assessora Jurídica', company: 'Holding de Infraestrutura e Agro' },
     ],
     education: [
-      { year: '2002', title: 'Bacharelado em Direito', institution: 'Universidade Mackenzie' },
-      { year: '2005', title: 'Especialização em Direito do Trabalho', institution: 'UNISANTA' },
+      { year: '2011', title: 'Bacharelado em Direito', institution: 'Universidade Mackenzie' },
+      { year: '2014', title: 'Especialização em Direito Agrário e Imobiliário', institution: 'IDP' },
     ],
     languages: ['Português', 'Inglês'],
   },
@@ -102,239 +98,251 @@ const AttorneyProfile = () => {
   const [match, params] = useRoute('/advogado/:id');
   const attorneyId = parseInt(params?.id || '1');
   const attorney = attorneyData[attorneyId as keyof typeof attorneyData];
+  const [mapOpen, setMapOpen] = useState(false);
 
   if (!attorney) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-[#0F3B3F]">Advogado não encontrado</h1>
-        <Link href="/advogados" className="mt-4 text-[#C79C74] hover:underline">Voltar para Advogados</Link>
-      </div>
+      <>
+        <SiteHeader activePage="/advogados" />
+        <div style={{ backgroundColor: '#FAEDCD', minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} className="flex flex-col items-center justify-center">
+          <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 24, color: '#010326', marginBottom: 16 }}>Advogado não encontrado</h1>
+          <Link href="/advogados" style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, color: '#C79C74', textDecoration: 'underline' }}>Voltar para Advogados</Link>
+        </div>
+        <SiteFooter />
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* TOP BAR */}
-      <div className="bg-[#0F3B3F] text-white text-xs py-2">
-        <div className="container flex justify-between items-center">
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-[#C79C74]">Facebook</a>
-            <a href="#" className="hover:text-[#C79C74]">Instagram</a>
-            <a href="#" className="hover:text-[#C79C74]">LinkedIn</a>
-          </div>
-          <div className="hidden md:flex items-center gap-2"><Phone size={12} /><span>Consulta Gratuita: (11) 3000-0000</span></div>
-        </div>
-      </div>
-
-      {/* HEADER */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="container flex items-center justify-between py-4">
-          <Link href="/"><img src={IMAGES.logo} alt="Adaes" className="h-10 md:h-12" /></Link>
-          <nav className="hidden lg:flex items-center gap-0">
-            <Link href="/" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Inicio</Link>
-            <Link href="/sobre" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Sobre</Link>
-            <Link href="/advogados" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-[#C79C74] border-b-2 border-[#C79C74]">Advogados</Link>
-            <Link href="/blog" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Noticias</Link>
-            <Link href="/areas" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Areas de Pratica</Link>
-            <Link href="/contato" className="px-4 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 hover:text-[#C79C74] transition-colors">Contato</Link>
-            <button className="ml-4 p-2 text-gray-600 hover:text-[#C79C74]"><Search size={18} /></button>
-          </nav>
-        </div>
-      </header>
+    <>
+      <div id="adaes-cursor" className="adaes-cursor" aria-hidden="true" />
+      <SiteHeader activePage="/advogados" />
 
       {/* BREADCRUMB */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="container py-4 flex items-center gap-2 text-sm">
-          <Link href="/advogados" className="text-[#C79C74] hover:underline flex items-center gap-1">
-            <ArrowLeft size={14} /> Voltar para Advogados
+      <div style={{ backgroundColor: '#010326', paddingTop: '120px', paddingBottom: '24px', borderBottom: '1px solid rgba(250,237,205,0.06)' }}>
+        <div className="container">
+          <Link href="/advogados" className="group inline-flex items-center gap-2 cursor-none text-xs" style={{ textDecoration: 'none', color: '#C79C74', fontFamily: 'Outfit, sans-serif', textTransform: 'uppercase', letterSpacing: 2 }}>
+            <ArrowLeft size={12} className="transition-transform duration-300 group-hover:-translate-x-1" /> Voltar aos Advogados
           </Link>
         </div>
       </div>
 
-      {/* PROFILE HERO */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-12">
+      {/* PROFILE DETAIL */}
+      <section style={{ backgroundColor: '#FAEDCD', padding: '80px 0 120px' }}>
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Profile Image */}
-            <div className="md:col-span-1">
-              <img src={attorney.img} alt={attorney.name} className="w-full h-96 object-cover shadow-lg mb-6" />
-              <div className="bg-white p-6 border border-gray-200 shadow-sm">
-                <h3 className="text-sm font-bold text-[#0F3B3F] uppercase tracking-wide mb-4">Informacoes de Contato</h3>
-                <div className="space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            {/* Left Col - Photo & Quick Contacts (4 Columns) */}
+            <div className="lg:col-span-4 space-y-8">
+              <div style={{ border: '1px solid rgba(1,3,38,0.08)', overflow: 'hidden' }}>
+                <img src={attorney.img} alt={attorney.name} className="w-full object-cover" style={{ height: '480px', filter: 'brightness(0.95)' }} />
+              </div>
+              
+              <div style={{ backgroundColor: '#FAFAF7', padding: '32px 28px', border: '1px solid rgba(1,3,38,0.08)' }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, fontWeight: 400, color: '#010326', marginBottom: 20 }}>Canais Diretos</h3>
+                
+                <div className="space-y-5">
                   <div className="flex items-start gap-3">
-                    <Mail className="text-[#C79C74] flex-shrink-0 mt-1" size={18} />
+                    <Mail className="text-[#C79C74] flex-shrink-0 mt-1" size={16} />
                     <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wide">Email</p>
-                      <a href={`mailto:${attorney.email}`} className="text-[#0F3B3F] font-semibold hover:text-[#C79C74]">{attorney.email}</a>
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1, color: 'rgba(1,3,38,0.5)' }}>E-mail</p>
+                      <a href={`mailto:${attorney.email}`} className="cursor-none transition-colors duration-300 hover:text-[#C79C74]" style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, fontWeight: 500, color: '#010326', textDecoration: 'none' }}>
+                        {attorney.email}
+                      </a>
                     </div>
                   </div>
+                  
                   <div className="flex items-start gap-3">
-                    <Phone className="text-[#C79C74] flex-shrink-0 mt-1" size={18} />
+                    <Phone className="text-[#C79C74] flex-shrink-0 mt-1" size={16} />
                     <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wide">Telefone</p>
-                      <a href={`tel:${attorney.phone}`} className="text-[#0F3B3F] font-semibold hover:text-[#C79C74]">{attorney.phone}</a>
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1, color: 'rgba(1,3,38,0.5)' }}>Telefone</p>
+                      <a href={`tel:${attorney.phone}`} className="cursor-none transition-colors duration-300 hover:text-[#C79C74]" style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, fontWeight: 500, color: '#010326', textDecoration: 'none' }}>
+                        {attorney.phone}
+                      </a>
                     </div>
                   </div>
+                  
                   <div className="flex items-start gap-3">
-                    <MapPin className="text-[#C79C74] flex-shrink-0 mt-1" size={18} />
+                    <MapPin className="text-[#C79C74] flex-shrink-0 mt-1" size={16} />
                     <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wide">Localizacao</p>
-                      <p className="text-[#0F3B3F] font-semibold">{attorney.location}</p>
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1, color: 'rgba(1,3,38,0.5)' }}>Banca principal</p>
+                      <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, fontWeight: 500, color: '#010326' }}>
+                        {attorney.location}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Profile Info */}
-            <div className="md:col-span-2">
-              <div className="mb-8">
-                <p className="text-[#C79C74] text-sm font-semibold uppercase tracking-widest mb-2">Perfil do Advogado</p>
-                <h1 className="text-4xl md:text-5xl font-bold text-[#0F3B3F] mb-2">{attorney.name}</h1>
-                <p className="text-xl text-[#C79C74] font-semibold mb-4">{attorney.role}</p>
-                <p className="text-gray-600 leading-relaxed text-lg">{attorney.bio}</p>
+            {/* Right Col - Details & Experience (8 Columns) */}
+            <div className="lg:col-span-8 space-y-12">
+              <div>
+                <span className="eyebrow eyebrow-dark" style={{ marginBottom: 12 }}>Perfil Profissional</span>
+                <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(38px, 4.5vw, 56px)', fontWeight: 300, color: '#010326', lineHeight: 1.1, marginBottom: 8 }}>
+                  {attorney.name}
+                </h1>
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 16, fontWeight: 500, color: '#C79C74', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 28 }}>
+                  {attorney.role}
+                </p>
+                <div style={{ width: 48, height: 1, backgroundColor: '#C79C74', marginBottom: 28 }} />
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 16, lineHeight: 1.85, color: 'rgba(1,3,38,0.8)', fontWeight: 300 }}>
+                  {attorney.bio}
+                </p>
               </div>
 
               {/* Specialties */}
-              <div className="mb-8">
-                <h3 className="text-lg font-bold text-[#0F3B3F] uppercase tracking-wide mb-4 flex items-center gap-2">
-                  <Briefcase size={20} className="text-[#C79C74]" />
-                  Especialidades
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 40 }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#010326', fontWeight: 400, marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <Briefcase size={18} className="text-[#C79C74]" /> Especialidades
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {attorney.specialties.map((specialty, i) => (
-                    <span key={i} className="px-4 py-2 bg-gray-100 text-[#0F3B3F] text-sm font-semibold rounded border border-gray-200">
+                    <span key={i} style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, color: '#010326', backgroundColor: '#FAFAF7', border: '1px solid rgba(1,3,38,0.08)', padding: '8px 16px', borderRadius: 0 }}>
                       {specialty}
                     </span>
                   ))}
                 </div>
               </div>
 
+              {/* Experience */}
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 40 }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#010326', fontWeight: 400, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <Award size={18} className="text-[#C79C74]" /> Experiência Profissional
+                </h3>
+                <div className="space-y-8">
+                  {attorney.experience.map((exp, i) => (
+                    <div key={i} className="flex gap-6 pb-6 border-b border-rgba(1,3,38,0.06) last:border-0 last:pb-0" style={{ borderBottom: '1px solid rgba(1,3,38,0.06)' }}>
+                      <div className="flex-shrink-0" style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, color: '#C79C74', fontWeight: 300, minWidth: '100px' }}>
+                        {exp.year}
+                      </div>
+                      <div>
+                        <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: '#010326', fontWeight: 400, marginBottom: 4 }}>{exp.title}</h4>
+                        <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, color: 'rgba(1,3,38,0.6)' }}>{exp.company}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Education */}
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 40 }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#010326', fontWeight: 400, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <BookOpen size={18} className="text-[#C79C74]" /> Formação Acadêmica
+                </h3>
+                <div className="space-y-8">
+                  {attorney.education.map((edu, i) => (
+                    <div key={i} className="flex gap-6 pb-6 border-b border-rgba(1,3,38,0.06) last:border-0 last:pb-0" style={{ borderBottom: '1px solid rgba(1,3,38,0.06)' }}>
+                      <div className="flex-shrink-0" style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, color: '#C79C74', fontWeight: 300, minWidth: '100px' }}>
+                        {edu.year}
+                      </div>
+                      <div>
+                        <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: '#010326', fontWeight: 400, marginBottom: 4 }}>{edu.title}</h4>
+                        <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, color: 'rgba(1,3,38,0.6)' }}>{edu.institution}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Languages */}
-              <div>
-                <h3 className="text-lg font-bold text-[#0F3B3F] uppercase tracking-wide mb-4">Idiomas</h3>
-                <div className="flex flex-wrap gap-2">
+              <div style={{ borderTop: '1px solid rgba(1,3,38,0.1)', paddingTop: 40 }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: '#010326', fontWeight: 400, marginBottom: 20 }}>Idiomas</h3>
+                <div className="flex flex-wrap gap-3">
                   {attorney.languages.map((lang, i) => (
-                    <span key={i} className="px-3 py-1 bg-[#C79C74]/10 text-[#0F3B3F] text-sm font-semibold rounded">
+                    <span key={i} style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, color: '#010326', backgroundColor: 'rgba(199, 156, 116, 0.15)', padding: '6px 14px' }}>
                       {lang}
                     </span>
                   ))}
                 </div>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* EXPERIENCE */}
-      <section className="py-12 bg-white">
+      {/* CTA SECTION */}
+      <section style={{ background: '#0F3B3F', padding: '80px 0' }} data-cursor-dark>
         <div className="container">
-          <h2 className="text-3xl font-bold text-[#0F3B3F] uppercase tracking-wide mb-8 flex items-center gap-2">
-            <Award size={24} className="text-[#C79C74]" />
-            Experiencia Profissional
-          </h2>
-          <div className="space-y-6">
-            {attorney.experience.map((exp, i) => (
-              <div key={i} className="flex gap-4 pb-6 border-b border-gray-200 last:border-b-0">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#C79C74] rounded-full flex items-center justify-center text-white font-bold">
-                    {exp.year.split('-')[0].slice(-2)}
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-[#C79C74] font-semibold uppercase tracking-wide">{exp.year}</p>
-                  <h4 className="text-lg font-bold text-[#0F3B3F]">{exp.title}</h4>
-                  <p className="text-gray-600">{exp.company}</p>
-                </div>
-              </div>
-            ))}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 40 }}>
+            <div>
+              <span className="eyebrow">Próximo passo</span>
+              <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 300, color: '#FAEDCD', lineHeight: 1.2, maxWidth: '22ch', marginTop: 20 }}>
+                Deseja agendar uma consulta estratégica com <em style={{ color: '#C79C74', fontStyle: 'italic' }}>{attorney.name}</em>?
+              </h2>
+            </div>
+            <Link href="/contato" className="cursor-none" style={{ display: 'inline-flex', alignItems: 'center', gap: 14, fontFamily: 'Outfit, sans-serif', fontSize: 12, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: '#0A0A0A', textDecoration: 'none', background: '#C79C74', padding: '18px 36px', transition: 'background 300ms ease' }} onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#DFC29A')} onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#C79C74')}>
+              Solicitar Agendamento
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* EDUCATION */}
-      <section className="py-12 bg-gray-50">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-[#0F3B3F] uppercase tracking-wide mb-8 flex items-center gap-2">
-            <BookOpen size={24} className="text-[#C79C74]" />
-            Formacao Academica
-          </h2>
-          <div className="space-y-6">
-            {attorney.education.map((edu, i) => (
-              <div key={i} className="flex gap-4 pb-6 border-b border-gray-200 last:border-b-0">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#0F3B3F] rounded-full flex items-center justify-center text-white font-bold">
-                    {edu.year.slice(-2)}
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-[#C79C74] font-semibold uppercase tracking-wide">{edu.year}</p>
-                  <h4 className="text-lg font-bold text-[#0F3B3F]">{edu.title}</h4>
-                  <p className="text-gray-600">{edu.institution}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SiteFooter onMapOpen={() => setMapOpen(true)} />
 
-      {/* CTA */}
-      <section className="py-10 bg-[#C79C74]">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <h3 className="text-xl md:text-2xl font-bold text-white italic">Deseja agendar uma consulta com {attorney.name}?</h3>
-          <Link href="/contato" className="px-8 py-3 bg-white text-[#0F3B3F] font-semibold uppercase text-sm hover:bg-gray-100 transition-colors">
-            Agendar Consulta
-          </Link>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="bg-[#1a1a1a] text-gray-300 py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Contatos</h4>
-              <div className="space-y-3 text-sm">
-                <p>Av. Paulista, 1000, 15o andar<br />Sao Paulo, SP</p>
-                <p className="flex items-center gap-2"><Phone size={14} /> (11) 3000-0000</p>
-                <p className="flex items-center gap-2"><Mail size={14} /> contato@adaes.com.br</p>
+      {/* ===== MAP MODAL ===== */}
+      {mapOpen && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/70"
+            style={{ backdropFilter: 'blur(8px)' }}
+            onClick={() => setMapOpen(false)}
+          />
+          <div
+            className="relative bg-white w-[90vw] max-w-3xl shadow-2xl z-10 flex flex-col"
+            style={{ height: '70vh', maxHeight: 560 }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '20px 28px',
+                borderBottom: '1px solid #D5D1C8',
+              }}
+            >
+              <div>
+                <h3
+                  style={{
+                    fontFamily: 'Playfair Display, serif',
+                    fontSize: 20,
+                    fontWeight: 400,
+                    color: '#0F3B3F',
+                  }}
+                >
+                  Nossa Localização
+                </h3>
+                <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, color: '#6b6b6b', marginTop: 4 }}>
+                  Setor de Autarquias Norte — Brasília, DF
+                </p>
               </div>
+              <button
+                onClick={() => setMapOpen(false)}
+                style={{ color: '#6b6b6b', padding: 8, background: 'none', border: 'none', cursor: 'none' }}
+              >
+                <X size={22} />
+              </button>
             </div>
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Explore</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/advogados" className="hover:text-[#C79C74]">Advogados</Link></li>
-                <li><Link href="/sobre" className="hover:text-[#C79C74]">Sobre Nos</Link></li>
-                <li><Link href="/blog" className="hover:text-[#C79C74]">Noticias</Link></li>
-                <li><Link href="/contato" className="hover:text-[#C79C74]">Contato</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Areas de Pratica</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-[#C79C74]">Direito Empresarial</a></li>
-                <li><a href="#" className="hover:text-[#C79C74]">Direito Tributario</a></li>
-                <li><a href="#" className="hover:text-[#C79C74]">Contencioso Civil</a></li>
-                <li><a href="#" className="hover:text-[#C79C74]">Direito Imobiliario</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold uppercase tracking-wider text-sm mb-6">Newsletter</h4>
-              <p className="text-sm mb-4">Receba nossas noticias</p>
-              <div className="flex">
-                <input type="email" placeholder="Seu e-mail" className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#C79C74]" />
-                <button className="px-4 py-2 bg-[#C79C74] text-white hover:bg-[#b8976a]"><ChevronRight size={18} /></button>
-              </div>
+            <div style={{ flex: 1 }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.837!2d-47.9292!3d-15.7920!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a7c2b5b7b1%3A0x!2sBras%C3%ADlia%2C+DF!5e0!3m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização Adães Advogados"
+              />
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <img src={IMAGES.logoFooter} alt="Adaes" className="h-8" />
-            <p className="text-xs text-gray-500">Copyright &copy; 2026. Adaes Advogados. Todos os direitos reservados.</p>
-          </div>
         </div>
-      </footer>
-    </div>
+      )}
+    </>
   );
 };
 
 export default AttorneyProfile;
+

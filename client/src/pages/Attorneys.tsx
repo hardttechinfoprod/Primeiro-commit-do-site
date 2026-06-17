@@ -88,12 +88,38 @@ const Attorneys = () => {
       >
         <div className="container">
           <div style={{ marginBottom: 72 }} className="reveal stagger-1">
-            <span className="eyebrow eyebrow-dark">Equipe</span>
-            <div className="gold-line" />
-            <h2 className="headline-lg" style={{ color: '#0F3B3F' }}>
-              Profissionais em<br />
-              <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Destaque</em>
-            </h2>
+            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap' }}>
+              {/* Texto da seção */}
+              <div style={{ flex: '1 1 auto' }}>
+                <span className="eyebrow eyebrow-dark">Equipe</span>
+                <div className="gold-line" />
+                <h2 className="headline-lg" style={{ color: '#0F3B3F' }}>
+                  Profissionais em<br />
+                  <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Destaque</em>
+                </h2>
+              </div>
+
+              {/* Selo Institucional Circular */}
+              <div style={{ flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 8 }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 160,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    animation: 'sealRotate 28s linear infinite',
+                    opacity: 0.92,
+                  }}
+                >
+                  <img
+                    src="/images/Adão_Selo_01.png"
+                    alt="Adães Advogados — Selo Institucional"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div
@@ -122,10 +148,10 @@ const Attorneys = () => {
                     <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 400, color: '#FAEDCD', marginBottom: 4 }}>
                       {person.name}
                     </h3>
-                    <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 4 }}>
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 4 }}>
                       {person.role}
                     </p>
-                    <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.5)' }}>
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.5)' }}>
                       {person.areas}
                     </p>
                   </div>
@@ -139,7 +165,7 @@ const Attorneys = () => {
                     justifyContent: 'space-between',
                   }}
                 >
-                  <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: '#6b6b6b', letterSpacing: '1px' }}>
+                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: 12, color: '#6b6b6b', letterSpacing: '1px' }}>
                     {person.location}
                   </span>
                   <span className="cta-link" style={{ fontSize: 11 }}>
@@ -159,3 +185,4 @@ const Attorneys = () => {
 };
 
 export default Attorneys;
+

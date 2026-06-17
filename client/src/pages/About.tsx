@@ -118,11 +118,30 @@ const About = () => {
           <div style={{ marginBottom: 72 }} className="reveal stagger-1">
             <span className="eyebrow">Fundamentos</span>
             <div className="gold-line" />
-            <h2 className="headline-lg" style={{ color: '#FAEDCD', maxWidth: '12ch' }}>
-              Nossos<br />
-              <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Valores</em>
-            </h2>
+            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap' }}>
+              <h2 className="headline-lg" style={{ color: '#FAEDCD', maxWidth: '12ch' }}>
+                Nossos<br />
+                <em style={{ color: '#C79C74', fontStyle: 'italic' }}>Valores</em>
+              </h2>
+              {/* Selo Institucional */}
+              <div
+                style={{
+                  width: 130,
+                  height: 130,
+                  flexShrink: 0,
+                  animation: 'sealRotate 28s linear infinite',
+                  opacity: 0.85,
+                }}
+              >
+                <img
+                  src="/images/Adão_Selo_01.png"
+                  alt="Adães Advogados — Selo Institucional"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
+              </div>
+            </div>
           </div>
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}
             className="values-grid">
             {values.map((v, i) => (
@@ -155,7 +174,7 @@ const About = () => {
                   {v.title}
                 </h3>
                 <p style={{
-                  fontFamily: 'Lato, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   fontSize: 15,
                   lineHeight: 1.8,
                   color: 'rgba(250, 237, 205,0.45)',
@@ -196,7 +215,7 @@ const About = () => {
                 </div>
                 <div style={{ width: 32, height: 1, background: 'rgba(199, 156, 116,0.4)', margin: '16px 0' }} />
                 <p style={{
-                  fontFamily: 'Lato, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   fontSize: 11,
                   fontWeight: 600,
                   letterSpacing: '3px',
@@ -229,3 +248,4 @@ const About = () => {
 };
 
 export default About;
+

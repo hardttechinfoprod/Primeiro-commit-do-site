@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
-import { SiteHeader, SiteFooter, PageHero, CtaSection } from '../components/Layout';
+import { SiteHeader, SiteFooter, PageHero } from '../components/Layout';
 
 const IMAGES = {
   heroBg: '/images/client/4.jpeg',
@@ -189,7 +189,7 @@ const PracticeAreas = () => {
                     </h3>
                     <p
                       style={{
-                        fontFamily: 'Lato, sans-serif',
+                        fontFamily: 'Outfit, sans-serif',
                         fontSize: 13,
                         color: 'rgba(250, 237, 205,0.55)',
                         lineHeight: 1.65,
@@ -201,7 +201,7 @@ const PracticeAreas = () => {
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <div style={{ width: 20, height: 1, background: '#C79C74' }} />
-                      <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: '#C79C74' }}>
+                      <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: '#C79C74' }}>
                         Saiba mais
                       </span>
                     </div>
@@ -213,10 +213,10 @@ const PracticeAreas = () => {
         </div>
       </section>
 
-      <CtaSection />
       <SiteFooter />
     </>
   );
 };
 
 export default PracticeAreas;
+

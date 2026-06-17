@@ -172,7 +172,7 @@ img {
 
 /* ===== EYEBROW LABEL ===== */
 .eyebrow {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 5px;
@@ -222,7 +222,7 @@ img {
 
 /* ===== BODY TEXT ===== */
 .body-lg {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 17px;
   line-height: 1.85;
   color: #3a3a3a;
@@ -230,7 +230,7 @@ img {
 }
 
 .body-md {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 15px;
   line-height: 1.75;
   color: #6b6b6b;
@@ -241,7 +241,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -313,7 +313,7 @@ img {
 /* ===== ANIMATED NAV UNDERLINE ===== */
 .nav-link {
   position: relative;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -368,7 +368,7 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -394,6 +394,11 @@ img {
   50% { transform: scaleY(1); transform-origin: top; }
   51% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes sealRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== PRACTICE AREA CARD ===== */
@@ -472,7 +477,7 @@ img {
 }
 
 .stat-label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -563,7 +568,7 @@ img {
 
 /* ===== FOOTER LINKS ===== */
 .footer-link {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 14px;
   color: rgba(250, 237, 205, 0.5);
   text-decoration: none;
@@ -590,7 +595,7 @@ img {
 }
 
 .news-card-date {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -631,3 +636,4 @@ img {
   min-height: 0;
   min-width: 0;
 }
+

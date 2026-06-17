@@ -158,6 +158,30 @@ const Blog = () => {
             {/* SIDEBAR DE APOIO (4 Colunas no Desktop) */}
             <aside className="lg:col-span-4 flex flex-col gap-12 lg:pl-8">
               
+              {/* Selo Institucional Circular */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+                <div
+                  style={{
+                    width: 140,
+                    height: 140,
+                    borderRadius: '50%',
+                    border: '1px solid rgba(1,3,38,0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    animation: 'sealRotate 24s linear infinite',
+                    padding: 4,
+                  }}
+                >
+                  <img
+                    src="/images/Adão_Selo_02.png"
+                    alt="Adães Advogados — Selo Institucional"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  />
+                </div>
+                <div style={{ width: '40px', height: '1px', backgroundColor: 'rgba(1,3,38,0.12)' }} />
+              </div>
+
               {/* Box de Inscrição Newsletter */}
               <div style={{ backgroundColor: '#010326', padding: '40px 32px', border: '1px solid rgba(250,237,205,0.08)' }}>
                 <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: 3, textTransform: 'uppercase', color: '#C79C74', display: 'block', marginBottom: 16 }}>
@@ -285,3 +309,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

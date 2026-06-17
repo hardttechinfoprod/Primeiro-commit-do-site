@@ -11,8 +11,8 @@ import { Phone, Mail, MapPin, ArrowRight, X, Menu } from 'lucide-react';
 =================================================================== */
 
 const IMAGES = {
-  logo: '/images/logo.svg',
-  logoFooter: '/images/logo-footer.svg',
+  logo: '/images/Adão_Logo Principal_02.png',          // Dark Teal
+  logoFooter: '/images/Adão_Logo Principal_01.png',    // Gold
   // Fotos do cliente — mapeadas editorialmente
   hero: '/images/client/5.jpeg',          // Arquitetura noturna — escala + luz dourada
   heroAlt: '/images/client/7.jpeg',       // Corredor — perspectiva profundidade
@@ -272,8 +272,8 @@ const Home = () => {
         {/* ===== MOBILE MENU OVERLAY ===== */}
         <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`} style={{ background: '#010326' }}>
           <div className="flex justify-between items-center mb-16">
-            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2" style={{ textDecoration: 'none' }}>
-              <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '24px', fontWeight: 400, color: '#FAEDCD', letterSpacing: '-0.02em' }}>Adães</span>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center" style={{ textDecoration: 'none' }}>
+              <img src="/images/Adão_Logo Principal_03.png" alt="Adães Advogados" className="h-8" />
             </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -326,28 +326,50 @@ const Home = () => {
         >
           <div className="container">
             <div className="flex items-center justify-between">
-              <Link href="/" className="relative z-10 flex items-center gap-3" style={{ textDecoration: 'none' }}>
-                <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '28px', fontWeight: 400, color: '#010326', letterSpacing: '-0.02em', lineHeight: 1 }}>Adães</span>
-                <span className="hidden sm:inline-block" style={{ fontFamily: 'Outfit, sans-serif', fontSize: '11px', fontWeight: 500, letterSpacing: '4px', textTransform: 'uppercase', color: '#010326', opacity: 0.8, marginTop: '2px' }}>Advogados</span>
+              <Link href="/" className="relative z-10 flex items-center justify-center cursor-pointer">
+                <img
+                  src={IMAGES.logo}
+                  alt="Adães Advogados"
+                  className="h-8 transition-all duration-300"
+                />
               </Link>
 
               {/* Desktop Nav */}
               <nav className="hidden lg:flex items-center gap-12">
                 {[
-                  { href: '/', label: 'Início' },
-                  { href: '/sobre', label: 'Sobre' },
-                  { href: '/advogados', label: 'Advogados' },
-                  { href: '/areas', label: 'Áreas' },
-                  { href: '/blog', label: 'Notícias' },
+                  { href: '/', label: 'Início', active: true },
+                  { href: '/sobre', label: 'Sobre', active: false },
+                  { href: '/advogados', label: 'Advogados', active: false },
+                  { href: '/areas', label: 'Áreas', active: false },
+                  { href: '/blog', label: 'Notícias', active: false },
                 ].map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     className="relative group"
-                    style={{ fontFamily: 'Outfit, sans-serif', fontSize: '11px', fontWeight: 600, color: '#010326', letterSpacing: '3px', textTransform: 'uppercase', textDecoration: 'none' }}
+                    style={{
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      color: item.active ? '#C79C74' : '#010326',
+                      letterSpacing: '3px',
+                      textTransform: 'uppercase',
+                      textDecoration: 'none',
+                    }}
                   >
                     {item.label}
-                    <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-[#010326] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full"></span>
+                    <span
+                      style={{
+                        position: 'absolute',
+                        bottom: '-8px',
+                        left: 0,
+                        height: '1px',
+                        background: '#C79C74',
+                        width: item.active ? '100%' : '0',
+                        transition: 'width 400ms cubic-bezier(0.4,0,0.2,1)',
+                      }}
+                      className={item.active ? '' : 'group-hover:!w-full'}
+                    />
                   </Link>
                 ))}
               </nav>
@@ -355,24 +377,34 @@ const Home = () => {
               <div className="hidden lg:block relative z-10">
                 <Link
                   href="/contato"
-                  className="group relative"
                   style={{
                     fontFamily: 'Outfit, sans-serif',
-                    fontSize: 10,
+                    fontSize: 11,
                     fontWeight: 600,
                     letterSpacing: '3px',
                     textTransform: 'uppercase',
-                    color: '#010326',
+                    padding: '10px 24px',
+                    border: `1px solid ${scrolled ? '#0F3B3F' : 'rgba(1,3,38,0.5)'}`,
+                    color: scrolled ? '#0F3B3F' : '#010326',
                     textDecoration: 'none',
-                    transition: 'opacity 300ms ease',
+                    transition: 'all 300ms ease',
+                    display: 'inline-block',
                   }}
-                  onMouseEnter={e => ((e.currentTarget as HTMLElement).style.opacity = '0.7')}
-                  onMouseLeave={e => ((e.currentTarget as HTMLElement).style.opacity = '1')}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.background = '#C79C74';
+                    (e.currentTarget as HTMLElement).style.borderColor = '#C79C74';
+                    (e.currentTarget as HTMLElement).style.color = '#FAEDCD';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.background = 'transparent';
+                    (e.currentTarget as HTMLElement).style.borderColor = scrolled ? '#0F3B3F' : 'rgba(1,3,38,0.5)';
+                    (e.currentTarget as HTMLElement).style.color = scrolled ? '#0F3B3F' : '#010326';
+                  }}
                 >
-                  Consulta
-                  <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-[#010326] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full"></span>
+                  Contato
                 </Link>
               </div>
+
 
               {/* Mobile Menu Btn */}
               <button
@@ -532,27 +564,29 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[rgba(250,237,205,0.05)]">
               
               {[
-                { label: 'Governança Patrimonial', desc: 'Preservação estrutural' },
-                { label: 'Estruturas Societárias', desc: 'Engenharia corporativa' },
-                { label: 'Atuação Nacional', desc: 'Cobertura estratégica' },
-                { label: 'Conselho Estratégico', desc: 'Diretoria executiva' }
+                { label: 'Governança Patrimonial', desc: 'Preservação estrutural de ativos e heranças.' },
+                { label: 'Estruturas Societárias', desc: 'Engenharia corporativa e reorganização de holdings.' },
+                { label: 'Atuação Nacional', desc: 'Cobertura estratégica nos tribunais superiores.' },
+                { label: 'Conselho Estratégico', desc: 'Aconselhamento direto para diretoria executiva.' }
               ].map((item, i) => (
                 <div 
                   key={i} 
-                  className="py-8 px-6 lg:px-10 flex flex-col justify-center group cursor-pointer" 
+                  className="py-16 px-6 lg:py-24 lg:px-10 flex flex-col justify-between group cursor-pointer" 
                   style={{ transition: 'background-color 300ms ease' }} 
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(250,237,205,0.02)'} 
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'}
                 >
-                  <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 12 }}>
+                  <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 500, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 32 }}>
                     {String(i + 1).padStart(2, '0')}.
                   </div>
-                  <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, fontWeight: 300, color: '#FAEDCD', marginBottom: 8, letterSpacing: '0.02em' }}>
-                    {item.label}
-                  </h4>
-                  <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, color: 'rgba(250,237,205,0.5)', fontWeight: 300 }}>
-                    {item.desc}
-                  </p>
+                  <div>
+                    <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 300, color: '#FAEDCD', marginBottom: 12, letterSpacing: '0.02em', lineHeight: 1.3 }}>
+                      {item.label}
+                    </h4>
+                    <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, color: 'rgba(250,237,205,0.6)', fontWeight: 300, lineHeight: 1.6 }}>
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
 
@@ -654,7 +688,7 @@ const Home = () => {
               
               {/* Stat 1 */}
               <div 
-                className="relative" 
+                className="relative flex flex-col items-center text-center lg:px-6" 
                 style={{ 
                   opacity: statsVisible ? 1 : 0, 
                   transform: statsVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -670,7 +704,7 @@ const Home = () => {
 
               {/* Stat 2 */}
               <div 
-                className="relative lg:border-l lg:border-[rgba(1,3,38,0.08)] lg:pl-8" 
+                className="relative flex flex-col items-center text-center lg:border-l lg:border-[rgba(1,3,38,0.08)] lg:px-6" 
                 style={{ 
                   opacity: statsVisible ? 1 : 0, 
                   transform: statsVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -686,7 +720,7 @@ const Home = () => {
 
               {/* Stat 3 */}
               <div 
-                className="relative lg:border-l lg:border-[rgba(1,3,38,0.08)] lg:pl-8" 
+                className="relative flex flex-col items-center text-center lg:border-l lg:border-[rgba(1,3,38,0.08)] lg:px-6" 
                 style={{ 
                   opacity: statsVisible ? 1 : 0, 
                   transform: statsVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -702,7 +736,7 @@ const Home = () => {
 
               {/* Quote Block - Safe and Proportional */}
               <div 
-                className="relative lg:border-l lg:border-[rgba(1,3,38,0.08)] lg:pl-8" 
+                className="relative flex flex-col items-center text-center lg:border-l lg:border-[rgba(1,3,38,0.08)] lg:px-6" 
                 style={{ 
                   opacity: statsVisible ? 1 : 0, 
                   transform: statsVisible ? 'translateY(0)' : 'translateY(12px)',
@@ -718,6 +752,7 @@ const Home = () => {
                     fontStyle: 'italic',
                     lineHeight: 1.4,
                     color: '#010326',
+                    textAlign: 'center',
                   }}
                 >
                   "A governança corporativa exige precisão absoluta."
@@ -1203,7 +1238,7 @@ const Home = () => {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: 16,
-                      fontFamily: 'Lato, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                       fontSize: 11,
                       fontWeight: 600,
                       letterSpacing: '4px',
@@ -1267,12 +1302,12 @@ const Home = () => {
                 <img
                   src={IMAGES.logoFooter}
                   alt="Adães Advogados"
-                  className="h-10 mb-6"
-                  style={{ filter: 'brightness(0) invert(1)', opacity: 0.7 }}
+                  className="h-9 mb-6"
+                  style={{ opacity: 0.9 }}
                 />
                 <p
                   style={{
-                    fontFamily: 'Lato, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontSize: 14,
                     lineHeight: 1.8,
                     color: 'rgba(250, 237, 205,0.4)',
@@ -1299,7 +1334,7 @@ const Home = () => {
               <div>
                 <h4
                   style={{
-                    fontFamily: 'Lato, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontSize: 10,
                     fontWeight: 600,
                     letterSpacing: '4px',
@@ -1329,7 +1364,7 @@ const Home = () => {
               <div>
                 <h4
                   style={{
-                    fontFamily: 'Lato, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontSize: 10,
                     fontWeight: 600,
                     letterSpacing: '4px',
@@ -1353,7 +1388,7 @@ const Home = () => {
               <div>
                 <h4
                   style={{
-                    fontFamily: 'Lato, sans-serif',
+                    fontFamily: 'Outfit, sans-serif',
                     fontSize: 10,
                     fontWeight: 600,
                     letterSpacing: '4px',
@@ -1371,7 +1406,7 @@ const Home = () => {
                       display: 'flex',
                       alignItems: 'flex-start',
                       gap: 10,
-                      fontFamily: 'Lato, sans-serif',
+                      fontFamily: 'Outfit, sans-serif',
                       fontSize: 13,
                       color: 'rgba(250, 237, 205,0.4)',
                       background: 'none',
@@ -1425,7 +1460,7 @@ const Home = () => {
             >
               <p
                 style={{
-                  fontFamily: 'Lato, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   fontSize: 12,
                   color: 'rgba(250, 237, 205,0.2)',
                   letterSpacing: '1px',
@@ -1435,7 +1470,7 @@ const Home = () => {
               </p>
               <p
                 style={{
-                  fontFamily: 'Lato, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   fontSize: 12,
                   color: 'rgba(250, 237, 205,0.15)',
                   letterSpacing: '1px',
@@ -1479,7 +1514,7 @@ const Home = () => {
                   >
                     Nossa Localização
                   </h3>
-                  <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, color: '#6b6b6b', marginTop: 4 }}>
+                  <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 13, color: '#6b6b6b', marginTop: 4 }}>
                     Setor de Autarquias Norte — Brasília, DF
                   </p>
                 </div>
@@ -1537,3 +1572,4 @@ const Home = () => {
 };
 
 export default Home;
+

@@ -7,8 +7,9 @@ import { Phone, Mail, MapPin, Menu, X, ArrowRight } from 'lucide-react';
    Usado em todas as páginas internas
 =================================================================== */
 
-const LOGO = '/images/logo.svg';
-const LOGO_FOOTER = '/images/logo-footer.svg';
+const LOGO_LIGHT = '/images/Adão_Logo Principal_02.png'; // Dark Teal logo for light backgrounds
+const LOGO_DARK = '/images/Adão_Logo Principal_03.png';  // White logo for dark backgrounds
+const LOGO_FOOTER = '/images/Adão_Logo Principal_01.png'; // Gold logo for footer
 
 function useHeaderScroll() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +32,7 @@ export function SiteHeader({
   const [mobileOpen, setMobileOpen] = useState(false);
   const scrolled = useHeaderScroll();
   const isTransparent = transparent && !scrolled;
+  const currentLogo = isTransparent ? LOGO_DARK : LOGO_LIGHT;
 
   const navItems = [
     { href: '/', label: 'Início' },
@@ -61,7 +63,7 @@ export function SiteHeader({
       <div className={`mobile-menu-overlay ${mobileOpen ? 'open' : ''}`} data-cursor-dark>
         <div className="flex justify-between items-center mb-16">
           <Link href="/" onClick={() => setMobileOpen(false)}>
-            <img src={LOGO} alt="Adães" className="h-9" style={{ filter: 'brightness(0) invert(1)' }} />
+            <img src={LOGO_DARK} alt="Adães" className="h-8" />
           </Link>
           <button onClick={() => setMobileOpen(false)} className="text-white p-2" aria-label="Fechar menu">
             <X size={22} />
@@ -80,7 +82,7 @@ export function SiteHeader({
           ))}
         </nav>
         <div className="mt-auto pt-8" style={{ borderTop: '1px solid rgba(250, 237, 205,0.1)' }}>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(250, 237, 205,0.35)' }}>
+          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 11, letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(250, 237, 205,0.35)' }}>
             BRASÍLIA, DF · BRASIL
           </p>
         </div>
@@ -103,10 +105,9 @@ export function SiteHeader({
           <div className="flex items-center justify-between py-5">
             <Link href="/">
               <img
-                src={LOGO}
+                src={currentLogo}
                 alt="Adães Advogados"
-                className="h-9 transition-all duration-300"
-                style={{ filter: isTransparent ? 'brightness(0) invert(1)' : 'none' }}
+                className="h-8 transition-all duration-300"
               />
             </Link>
 
@@ -124,7 +125,7 @@ export function SiteHeader({
               <Link
                 href="/contato"
                 style={{
-                  fontFamily: 'Lato, sans-serif',
+                  fontFamily: 'Outfit, sans-serif',
                   fontSize: 11,
                   fontWeight: 600,
                   letterSpacing: '3px',
@@ -183,10 +184,9 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
             <img
               src={LOGO_FOOTER}
               alt="Adães Advogados"
-              className="h-10 mb-6"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-9 mb-6"
             />
-            <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, lineHeight: 1.8, color: 'rgba(250, 237, 205,0.35)', maxWidth: '40ch', marginBottom: 24 }}>
+            <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, lineHeight: 1.8, color: 'rgba(250, 237, 205,0.35)', maxWidth: '40ch', marginBottom: 24 }}>
               Conselheiros estratégicos ao lado de empresários, investidores e executivos de alto patrimônio.
             </p>
             <div style={{ display: 'flex', gap: 20 }}>
@@ -198,7 +198,7 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
 
           {/* Nav */}
           <div>
-            <h4 style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 24 }}>
+            <h4 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 24 }}>
               Escritório
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -210,14 +210,14 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
 
           {/* Contato */}
           <div>
-            <h4 style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 24 }}>
+            <h4 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 10, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#C79C74', marginBottom: 24 }}>
               Contato
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {onMapOpen && (
                 <button
                   onClick={onMapOpen}
-                  style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'Lato, sans-serif', fontSize: 13, color: 'rgba(250, 237, 205,0.35)', background: 'none', border: 'none', textAlign: 'left', lineHeight: 1.6, cursor: 'none', transition: 'color 300ms ease' }}
+                  style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontFamily: 'Outfit, sans-serif', fontSize: 13, color: 'rgba(250, 237, 205,0.35)', background: 'none', border: 'none', textAlign: 'left', lineHeight: 1.6, cursor: 'none', transition: 'color 300ms ease' }}
                   onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#C79C74')}
                   onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(250, 237, 205,0.35)')}
                 >
@@ -239,10 +239,10 @@ export function SiteFooter({ onMapOpen }: { onMapOpen?: () => void }) {
 
         {/* Bottom */}
         <div style={{ borderTop: '1px solid rgba(250, 237, 205,0.07)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.18)', letterSpacing: '1px' }}>
+          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.18)', letterSpacing: '1px' }}>
             © 2026 Adães Advogados. Todos os direitos reservados.
           </p>
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.12)', letterSpacing: '1px' }}>
+          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 12, color: 'rgba(250, 237, 205,0.12)', letterSpacing: '1px' }}>
             OAB/DF · Brasília, Brasil
           </p>
         </div>
@@ -304,7 +304,7 @@ export function PageHero({
           {title}
         </h1>
         {subtitle && (
-          <p style={{ fontFamily: 'Lato, sans-serif', fontSize: 15, color: 'rgba(250, 237, 205,0.55)', marginTop: 12 }}>
+          <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: 15, color: 'rgba(250, 237, 205,0.55)', marginTop: 12 }}>
             {subtitle}
           </p>
         )}
@@ -350,7 +350,7 @@ export function CtaSection() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 14,
-              fontFamily: 'Lato, sans-serif',
+              fontFamily: 'Outfit, sans-serif',
               fontSize: 12,
               fontWeight: 600,
               letterSpacing: '3px',
@@ -365,7 +365,7 @@ export function CtaSection() {
             onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = '#DFC29A')}
             onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '#C79C74')}
           >
-            Solicitar Consulta
+            Solicitar Contato
             <ArrowRight size={15} />
           </Link>
         </div>
@@ -375,3 +375,4 @@ export function CtaSection() {
 }
 
 export default SiteHeader;
+

@@ -188,30 +188,8 @@ const HomeV2 = () => {
           
           {/* LOGO */}
           <div className="flex justify-start">
-            <Link href="/" className="flex flex-col items-start justify-center cursor-pointer group">
-              <span style={{ 
-                fontFamily: 'Playfair Display, serif',
-                fontWeight: 400, 
-                letterSpacing: '0.2em', 
-                fontSize: '20px',
-                lineHeight: 1,
-                color: '#FAEDCD',
-                transition: 'opacity 300ms ease'
-              }}>
-                ADÃES
-              </span>
-              <span style={{ 
-                fontSize: '9px', 
-                letterSpacing: '0.5em', 
-                opacity: 0.7,
-                lineHeight: 1,
-                marginTop: '6px',
-                color: '#FAEDCD',
-                textTransform: 'uppercase',
-                transition: 'opacity 300ms ease'
-              }}>
-                ADVOGADOS
-              </span>
+            <Link href="/" className="flex items-center justify-center cursor-pointer">
+              <img src="/images/Adão_Logo Principal_03.png" alt="Adães Advogados" className="h-8" />
             </Link>
           </div>
 
@@ -248,21 +226,20 @@ const HomeV2 = () => {
             ))}
           </div>
 
-          {/* BOTÃO CONSULTA (CTA) */}
           <div className="hidden lg:flex justify-end">
             <Link 
               href="/contato" 
               className="group relative cursor-pointer flex items-center gap-3 overflow-hidden"
               style={{ 
-                fontSize: '10px', 
-                letterSpacing: '0.2em', 
+                fontSize: '11px', 
+                letterSpacing: '0.25em', 
                 textTransform: 'uppercase', 
                 fontWeight: 500,
                 color: '#FAEDCD',
                 transition: 'opacity 400ms ease'
               }}
             >
-              <span>Consultoria Estratégica</span>
+              <span>Contato</span>
               <div className="relative w-8 h-[0.5px] bg-[rgba(250,237,205,0.15)] overflow-hidden">
                 <div className="absolute inset-0 bg-[#FAEDCD] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-editorial" />
               </div>
@@ -303,7 +280,7 @@ const HomeV2 = () => {
               onClick={() => setMenuOpen(false)}
               style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C79C74', marginTop: '24px', borderBottom: '1px solid #C79C74', paddingBottom: '4px' }}
             >
-              Consultoria Estratégica
+              Contato
             </Link>
           </div>
         </div>
@@ -867,30 +844,9 @@ const HomeV2 = () => {
 
           {/* GRID DE INFORMAÇÕES TÉCNICAS */}
           <div className={`grid grid-cols-1 md:grid-cols-4 gap-[40px] md:gap-[48px] mb-[64px] md:mb-[80px]`}>
-            {/* COLUNA 1 - LOGO */}
             <div>
-              <div className="flex flex-col items-start justify-center" style={{ marginBottom: '24px' }}>
-                <span style={{ 
-                  fontFamily: 'Playfair Display, serif',
-                  fontWeight: 400, 
-                  letterSpacing: '0.2em', 
-                  fontSize: '20px',
-                  lineHeight: 1,
-                  color: '#FAEDCD'
-                }}>
-                  ADÃES
-                </span>
-                <span style={{ 
-                  fontSize: '8px', 
-                  letterSpacing: '0.4em', 
-                  opacity: 0.65,
-                  lineHeight: 1,
-                  marginTop: '6px',
-                  color: '#FAEDCD',
-                  textTransform: 'uppercase'
-                }}>
-                  ADVOGADOS
-                </span>
+              <div className="flex items-center justify-start" style={{ marginBottom: '24px' }}>
+                <img src="/images/Adão_Logo Principal_01.png" alt="Adães Advogados" className="h-9" />
               </div>
               <p style={{ fontSize: '12px', color: 'rgba(250,237,205,0.8)', lineHeight: 1.8, maxWidth: '240px' }}>
                 Assessoria jurídica de alto padrão para líderes, conselhos e consórcios empresariais no Brasil.
@@ -956,3 +912,4 @@ const HomeV2 = () => {
 };
 
 export default HomeV2;
+
