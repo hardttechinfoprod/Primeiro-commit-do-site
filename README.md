@@ -636,3 +636,5 @@ const { data } = trpc.items.getByIds.useQuery({ ids });
 **Rule:** Use sonner for toasts; do not add react-toastify or @radix-ui/react-toast
 
 **Rule:** If you put placeholder components for App.tsx routes, you MUST replace them with actual components after your implementation.
+#   P r i m e i r o - c o m m i t - d o - s i t e  
+ 
